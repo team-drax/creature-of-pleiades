@@ -51,11 +51,15 @@ Daily stand-up meeting at 9AM* to discuss daily responsibilities or on-going pro
 
 ### Abdulkadir
 
-- Strengths: TBD.
+- Strengths: 
+  - Good worker. Can help team however needed at that time.
 
-- Weakness: TBD.
+- Weakness:
+  - JS - tough time interpretting logic of the language.
+  - CSS
 
-- Application: TBD.
+- Application:
+  - Where ever needed!
 
 ## Conflict Plan
 
