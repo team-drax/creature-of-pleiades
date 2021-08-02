@@ -112,3 +112,5 @@ Daily stand-up meeting at 9AM* to discuss daily responsibilities or on-going pro
 - Each member then git pulls from main to their system for tomorrow's work.
 
 4. Will you be using a PR review workflow? Yes, we will have one person required to approve PR to "in Review" branch and two for "main" branch. We will come together each day to talk about our respective PRs and what we have accomplished for the day, and approve all PRs then.
+
+
