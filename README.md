@@ -42,3 +42,9 @@ This is Team Drax's Code 201 final project repo.
 
 - obvious buttons/menus
 - a layout that isn't overly complicated/not a lot of menus
+
+
+
+## Domain Modeling
+
+![Domain Modeling](./img/domain-modeling.png)
