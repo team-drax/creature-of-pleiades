@@ -14,3 +14,31 @@ This is Team Drax's Code 201 final project repo.
 - The MVP should include at least three "different" outcomes based on user input/experience.
 
 
+## **User Stories**
+
+### *As a user, I want an interactive game, so that the game is fun and engaging.*
+
+- creature development
+- fun story
+- multiple endings
+
+### *As a user, I want to be able to continue my game, so that I don't have to start at the beginning*
+
+- save data to local storage after each choice in the game
+- a continue button to continue from where the user left off if they leave the page or on the home page
+- an option to reset the game
+
+### *As a user, I want customization, so my game feels personal to me*
+
+- take in user info name of protagonist (user), name of creature
+- 5 choices in the game influencing creature
+- background color toggle for user's color choice.
+
+### *As a user, I want multiple outcomes, so my game has replay value.*
+
+- 5 endings - 1 neutral, 1 perfect, 1 worst, 1 positive, 1 negative
+
+### *As a user, I want a clean interface, so my game is easy to understand and casual.*
+
+- obvious buttons/menus
+- a layout that isn't overly complicated/not a lot of menus
