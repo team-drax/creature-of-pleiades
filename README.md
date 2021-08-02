@@ -47,4 +47,4 @@ This is Team Drax's Code 201 final project repo.
 
 ## Domain Modeling
 
-![Domain Modeling](./img/domain-modeling.png)
+![Domain Modeling](img/domain-modeling.png)
