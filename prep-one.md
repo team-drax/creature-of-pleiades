@@ -98,7 +98,7 @@ Daily stand-up meeting at 9AM* to discuss daily responsibilities or on-going pro
 
 ## Git Process
 
-1. What components of your project will live on GitHub?
+1. What components of your project will live on GitHub??
 
 - All of them. We will form an organization and create an "in Review" branch that will be the default. At least three members (ideally all) will link up for 10 minutes at the end of day and ask for any alibis before merges to the main occur.
 
