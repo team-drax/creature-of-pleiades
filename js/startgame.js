@@ -5,8 +5,10 @@
 //------------------------Global Variables----------------------------//
 let playScreen = document.getElementById('section2');
 let newGameButtonElem = document.getElementById('newGameButton');
+let loadGameButtonElem = document.getElementById('loadGame');
 let startGameIdArr = ['name', 'location', 'color'];
 let startGameTCArr = ['What\'s your name? ', 'Where are you located? ', 'What\'s your favorite color? '];
+let userInfo = [];
 
 //------------------------Global Functions----------------------------//
 function handleStartGame(e){
@@ -41,31 +43,63 @@ function handleStartGame(e){
   startChapterOneButton.type = 'submit';
   startChapterOneButton.textContent = 'Continue';
   startGameForm.appendChild(startChapterOneButton);
-  // startChapterOneButton.addEventListener('submit', handleStartChapterOne);
-  // startChapterOneButton.onclick(renderChapterOne());
-  // startChapterOneButton.onclick(location.href = "./html/about.html")
-  startChapterOneButton.addEventListener('click', handleStartChapterOne);
-
+  startGameDiv.addEventListener('submit', handleStartChapterOne);
 }
 
 function handleStartChapterOne(e) {
   e.preventDefault();
+  for (let i = 1; i < 4; i++){
+    userInfo.push(e.target[i].value);
+  }
+  addUser();
   location.href = "./html/chapters.html";
 }
 
-// startGameOnClick(startChapterOneButton);
+function handleLoadGame(e){
+  e.preventDefault();
+  let storedUser = localStorage.getItem('user');
+  if(storedUser){
+    let parsedUser = JSON.parse(storedUser);
+    userInfo.push(parsedUser.name);
+    userInfo.push(parsedUser.location);
+    userInfo.push(parsedUser.color);
+    currentUser = new User(parsedUser.name, parsedUser.location, parsedUser.color);
+    // location.href = "./html/chapters.html" // need to add the location they left off from //
+    // if (chapterCounter === 1){
+    //   load chapter one
+    // } else if (chapterCounter === 2){
+    // load chapter two
+    // } else if (chapterCounter === 3){
+    // load chapter three
+    // } else if (chapterCounter === 4){
+    // load chapter one
+    // } else {
+    //   load chapter 5
+  } else {
+    alert('Sorry, there are currently no saved users.');
+  }
+}
 
+
+function addUser(){
+  currentUser = new User(userInfo[0], userInfo[1], userInfo[2]);
+  let preppedUser = JSON.stringify(currentUser);
+  localStorage.setItem('user', preppedUser);
+}
 
 //------------------------Constructor/Objects----------------------------//
+const User = function(name, location, color){
+  this.name = name;
+  this.location = location;
+  this.color = color;
+}
 
-
-
-
+let currentUser = new User(userInfo[0], userInfo[1], userInfo[2]);
 
 
 //------------------------Event Listeners----------------------------//
 newGameButtonElem.addEventListener('click', handleStartGame);
-
+loadGameButtonElem.addEventListener('click', handleLoadGame);
 
 
 
