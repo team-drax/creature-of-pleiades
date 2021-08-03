@@ -1,19 +1,19 @@
 'use strict';
 
 /* --------------------------------------------------------------------------------GLOBAL VARIABLES */
-const evoOne = ['./img/creatureparts/1-BRING.png', './img/creatureparts/1-LEAVE.png', './img/creatureparts/1-SCARE.png'];
-const evoTwo = ['./img/creatureparts/2-GARBAGE.png', './img/creatureparts/2-VEGGIES.png', './img/creatureparts/2-MEAT.png'];
-const evoThree = ['./img/creatureparts/3-TRUTH.png', './img/creatureparts/3-IGNORE.png', './img/creatureparts/3-LIE.png'];
-const evoFour = ['./img/creatureparts/4-UPSTAIRS.png', './img/creatureparts/4-BACKDOOR.png', './img/creatureparts/4-OPEN.png'];
-const evoFive = ['./img/creatureparts/5-INSTINCTS.png', './img/creatureparts/5-LAB.png', './img/creatureparts/5-SPACESHIP.png'];
+const evoOne = ['../img/creatureparts/1-BRING.png', '../img/creatureparts/1-LEAVE.png', '../img/creatureparts/1-SCARE.png'];
+const evoTwo = ['../img/creatureparts/2-GARBAGE.png', '../img/creatureparts/2-VEGGIES.png', '../img/creatureparts/2-MEAT.png'];
+const evoThree = ['../img/creatureparts/3-TRUTH.png', '../img/creatureparts/3-IGNORE.png', '../img/creatureparts/3-LIE.png'];
+const evoFour = ['../img/creatureparts/4-UPSTAIRS.png', '../img/creatureparts/4-BACKDOOR.png', '../img/creatureparts/4-OPEN.png'];
+const evoFive = ['../img/creatureparts/5-INSTINCTS.png', '../img/creatureparts/5-LAB.png', '../img/creatureparts/5-SPACESHIP.png'];
 //Variables for the different evolution images
 const creatureDivElem = document.getElementById('creature');
 //variable for the location of the creature div
 const formOneElem = document.getElementById('firstchoice');
 const formTwoElem = document.getElementById('secondchoice');
 const formThreeElem = document.getElementById('thirdchoice');
-const formFourElem = document.getElementById('fourthchoice')
-const formFiveElem = document.getElementById('fifthchoice')
+const formFourElem = document.getElementById('fourthchoice');
+const formFiveElem = document.getElementById('fifthchoice');
 //variable for the location for the question one form
 let myCreature = new Creature();
 // creates a creature named Randy and sets it to variable myCreature

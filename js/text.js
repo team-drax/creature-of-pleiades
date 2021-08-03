@@ -1,58 +1,102 @@
 'use strict';
-function storyPreview() {
-  let bodyElem = document.getElementById("bodyElem")
- let pElem = document.createElement("p");
- pElem.textContent = ` ChapterOne [Greetings!!! You’re entering in a restricted area.]
- Proceed...
- [In order for you to be granted access please provide the following information]
- •	NAME.
- •	BIRTHDAY
- •	LOCATION
- Once they provide the information, we will give them an alert with the following message.
- •	A Welcome greeting + username!!
- •	Find the Glowing EGG
- The moment the user picks the egg, the egg will vibrate as a result setting the alarm off. Then the egg will hatch, and an alien creature will pop out. 
- We will ask the user the following:
- Username + How do you want to proceed?
- We will give them 3 options:
- •	Scare the creature and go home. this will give them (negative point)
- •	Take the creature home with you. This will give them (positive point) 
- •	Leave the creature there while you go home. This will give them (zero point)
- ChapterTwo
+//---------------------------------------------GLOBAL VARIABLES
+const pElem = document.getElementById('paragraph');
+//gets the location of the paragraph element and assigns it to variable
+const nextButtonElem = document.getElementById('next');
+//gets the location of the next button element and assigns it to nextButtonElem
+let currentChapterIndex = 0;
+//assigns the current chapter to the index of 0 as a base point.  this will advance when we get to the last paragraph in the chapter per the
+let chapterArray = [];
+//creates an array that houses each instance of chapters made from the chapter constructor using the createAndPushChapters function
 
- 
- `;
- bodyElem.appendChild(pElem);
 
+
+//---------------------------------------------CONSTRUCTOR FUNCTION
+function Chapter(chaptername){
+  this.chaptername = chaptername;
+  this.paragraphIndex = 0;
+  this.paragraphArray = [];
 }
-storyPreview()
+//creates a function that creates instances of Chapters, while taking in chaptername as a parameter
 
 
-function storyPreview() {
-  let bodyElem = document.getElementById("bodyElem")
- let pElem = document.createElement("p");
- pElem.textContent = ` ChapterOne [Greetings!!! You’re entering in a restricted area.]
- Proceed...
- [In order for you to be granted access please provide the following information]
- •	NAME.
- •	BIRTHDAY
- •	LOCATION
- Once they provide the information, we will give them an alert with the following message.
- •	A Welcome greeting + username!!
- •	Find the Glowing EGG
- The moment the user picks the egg, the egg will vibrate as a result setting the alarm off. Then the egg will hatch, and an alien creature will pop out. 
- We will ask the user the following:
- Username + How do you want to proceed?
- We will give them 3 options:
- •	Scare the creature and go home. this will give them (negative point)
- •	Take the creature home with you. This will give them (positive point) 
- •	Leave the creature there while you go home. This will give them (zero point)
- ChapterTwo
 
- 
- `;
- bodyElem.appendChild(pElem);
+//---------------------------------------------CONSTRUCTOR METHODS
+Chapter.prototype.addParagraph = function(text){
+  this.paragraphArray.push(text);
+};
+//adds a text block to the paragraph array
 
+Chapter.prototype.getNextPara = function(){
+  let nextPara = this.paragraphArray[this.paragraphIndex];
+  this.paragraphIndex++;
+  pElem.innerHTML = nextPara;
+};
+//grabs the next paragraph from the Chapter using the Chapters paragraphIndex as reference for the paragraphArray, then increases the index by one
+
+Chapter.prototype.isAtLastPara = function(){
+  if (this.paragraphIndex == this.paragraphArray.length-1){
+    return true;
+  } else {
+    return false;
+  }
+};
+//checks if we are at the last paragraph of the chapter by checking if the Chapters paragraph index is equal to the length of the array.
+
+
+
+//---------------------------------------------Global Functions
+function createAndPushChapter(chaptername){
+  let chapter = new Chapter(chaptername);
+  chapterArray.push(chapter);
 }
-storyPreview()
+//creates 5 chapter objects and pushes them to the chapterArray
 
+
+
+
+
+
+//---------------------------------------------listener events
+function handleNext(e){
+  if (chapterArray[currentChapterIndex].isAtLastPara()){
+    chapterArray[currentChapterIndex].getNextPara();
+    nextButtonElem.style.visibility = 'hidden';
+    document.getElementById('testform').style.visibility = 'visible';
+  }else{
+    chapterArray[currentChapterIndex].getNextPara();
+  }
+}
+//HANDLES THE FUNCTIONS OF GOING TO THE NEXT PARAGRAPH
+
+
+//HANDLE THE FORM SUBMITTAL IN WHICH WE MOVE TO THE NEXT CHAPTER
+// currentChapterIndex++;
+
+
+
+
+//---------------------------------------------Listener
+nextButtonElem.addEventListener('click', handleNext);
+//listens for presses on the next button
+
+
+//NEED A LISTENER FOR FORM SUBMITTAL
+
+
+
+//---------------------------------------------Call Function
+createAndPushChapter('chapter 1 - part 1');
+createAndPushChapter('chapter 1 - part 2');
+createAndPushChapter('chapter 1 - part 3');
+createAndPushChapter('chapter 2 - the house');
+createAndPushChapter('chapter 3 - the confrontation');
+createAndPushChapter('chapter 4 - the villain');
+createAndPushChapter('chapter 5 - the return home');
+//creates and pushes the 5 chapters into the chapter array
+chapterArray[0].addParagraph('nothing happened');
+chapterArray[0].addParagraph('blah blah');
+chapterArray[0].addParagraph('test Paragraph 3');
+chapterArray[0].addParagraph('test paragraph 4');
+chapterArray[0].addParagraph('test paragraph 5');
+chapterArray[1].addParagraph('beginning of chapter 1 part 2');

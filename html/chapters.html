@@ -1,14 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<link>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' type='text/css' href="../css/style.css"></link>
+  <link rel='stylesheet' type="text/css" href="../css/CreatureDiv.css"></link>
+  <!-- CSS LINKS ^ -->
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+  <!-- FONT LINKS ^ -->
   <title>Creature of Pleiades: Story Mode</title>
  
 </head>
   
 <body id="bodyElem">
+  <article id="story">
+    <h2 id="chapterTitle">TEST CHAPTER</h2>
+    <p id="paragraph"></p>
+    <button id="next">NEXT</button>
+    <form id='testform'>
+      <h2 class="formlabel">testform</h2>
+      <div class="choices">
+        <input type='radio' name='test' id='testopt1'>
+        <label for='testopt1'>Test 1</label>
+        <input type='radio' name='test' id='testopt2'>
+        <label for='testopt1'>Test 2</label>
+        <input type='radio' name='test' id='testopt3'>
+        <label for='testopt1'>Test 3</label>
+      </div>
+      <div class='button'>TestSubmit</div>
+    </form>
+    <!-- <form id="firstchoice">
+      <h2 class="formlabel">Creature Evolution 5</h2>
+      <div class="choices">
+        <input type="radio" name="first" id="scare" value=2>
+        <label for="meat">SCARE THE CREATURE</label>
+        <input type="radio" name="first" id="leave" value=1>
+        <label for="meat">LEAVE THE CREATURE</label>
+        <input type="radio" name="first" id="bring" value=0>
+        <label for="meat">BRING HOME</label>
+      </div>
+      <div class='button'>TestSubmit</div>
+    </form>
+    <form id="secondchoice">
+      <h2 class="formlabel">Creature Evolution 5</h2>
+      <div class="choices">
+        <input type="radio" name="second" id="meat" value=2>
+        <label for="meat">MEAT</label>
+        <input type="radio" name="second" id="veggies" value=1>
+        <label for="meat">VEGGIES</label>
+        <input type="radio" name="second" id="garbage" value=0>
+        <label for="meat">GARBAGE</label>
+      </div>
+      <div class='button'>TestSubmit</div>
+    </form>
+    <form id="thirdchoice">
+      <h2 class="formlabel">Creature Evolution 5</h2>
+      <div class="choices">
+        <input type="radio" name="third" id="lie" value=2>
+        <label for="meat">LIE</label>
+        <input type="radio" name="third" id="ignore" value=1>
+        <label for="meat">IGNORE TEXT</label>
+        <input type="radio" name="third" id="truth" value=0>
+        <label for="meat">TELL TRUTH</label>
+      </div>
+      <div class='button'>TestSubmit</div>
+    </form>
+    <form id="fourthchoice">
+      <h2 class="formlabel">Creature Evolution 5</h2>
+      <div class="choices">
+        <input type="radio" name="fourth" id="open" value=2>
+        <label for="meat">OPEN THE DOOR</label>
+        <input type="radio" name="fourth" id="backdoor" value=1>
+        <label for="meat">GO OUT BACKDOOR</label>
+        <input type="radio" name="fourth" id="hide" value=0>
+        <label for="meat">HIDE UPSTAIRS</label>
+      </div>
+      <div class='button'>TestSubmit</div>
+    </form>
+    <form id="fifthchoice">
+      <h2 class="formlabel">Creature Evolution 5</h2>
+      <div class="choices">
+        <input type="radio" name="fifth" id="spaceship" value=2>
+        <label for="meat">TOWARDS SPACESHIP</label>
+        <input type="radio" name="fifth" id="lab" value=1>
+        <label for="meat">TO THE LAB</label>
+        <input type="radio" name="fifth" id="instincts" value=0>
+        <label for="meat">FOLLOW GUT</label>
+      </div>
+      <div class='button'>TestSubmit</div>
+    </form> -->
+  </article>
+  <div id="creature"> 
+  </div>
 
 </body>
 
@@ -17,5 +101,6 @@
 <!-- need to set creature id as "creature" per Justin -->
   
 <script src="../js/text.js"></script>
+<script src="../js/creature.js"></script>
 </html>
 
