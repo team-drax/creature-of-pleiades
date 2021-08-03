@@ -1,0 +1,30 @@
+#creature {
+  width:250px;
+  height: 250px;
+  background-color: darkblue;
+}
+#creature img {
+  position: absolute;
+  margin-left:25px;
+  margin-top:25px;
+}
+#traitone{
+z-index: 1;
+}
+#traittwo{
+z-index: 2;
+}
+#traitthree{
+z-index: 4;
+}
+#traitfour{
+z-index: 3;
+}
+#traitfive{
+z-index: 5;
+}
+#traitsix{
+z-index: 6;
+}
+
+
