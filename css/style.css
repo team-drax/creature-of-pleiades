@@ -218,3 +218,8 @@ a:hover {
 a:visited {
   color: white;
 }
+
+/* ----------------------------------------CSS FOR STORY FORMS */
+article form{
+  visibility: hidden;
+}
