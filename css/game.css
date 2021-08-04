@@ -54,68 +54,64 @@ footer{
 
 main div {
   width: 400px;
-  height: 600px;
-  margin:50px;
+  height: 700px;
+  margin-left:50px;
+  margin-top:30px;
   display: flex;
   border-radius: 50px;
 }
 
 #leftside{
   flex-direction: Column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 #title{
-  width:300px;
-  height: 120px;
-  background-image: url(../img/background/titlebg.png);
-  border-radius: 50px;
-  color:seashell;
-}
-#title h2, #title h3{
-  text-align: left;
-  margin-left: 50px;
   font-family: 'Kaushan Script', cursive;
-  margin-top:15px;
+  color:seashell;
+  font-size: 20pt;
 }
-#interface{
+.interface{
   display: flex;
   align-items: space-around;
   justify-content: space-around;
-  width:250px;
+  width:230px;
 }
-#interface div{
+.interface div{
   display:flex;
   justify-content: center;
   align-items: center;
   font-family: 'Kaushan Script', cursive;
-  margin:0px;
+  margin:0;
+  margin-bottom: 15px;
   width: 100px;
 }
 
 
 #rightside{
   margin-right:100px;
-  background-image: url(../img/background/article-bg.png);
   color:seashell;
   display:flex;
   justify-content: center;
   align-items: center;
 }
-
+#chapterTitle{
+  color:lightsteelblue;
+  font-family: 'Kaushan Script', cursive;
+  font-size: 20pt;
+  margin:0px;
+}
 .button {
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: white;
   width: 150px;
   height: 50px;
-  border-radius: 10px;
+  border-radius: 30px;
   transition-duration: 1s;
 }
-
 .button:hover{
-  background-color: paleturquoise;
-  color: black;
-  box-shadow: 0 12px 16px 0 darkblue, 0 17px 50px 0 steelblue
+  color: paleturquoise;
+  box-shadow: 0 0 10px 10px paleturquoise;
 }
 
 
@@ -124,10 +120,9 @@ main div {
 #creature {
   width:300px;
   height: 300px;
-  background-image: url(../img/background/creaturebg.png);
-  margin-bottom: 0px;
+  background-image: url(../img/background/creaturebg2.png);
+  /* margin-bottom: 0px; */
 }
-
 #creature img {
   position: absolute;
   margin-left:50px;
@@ -159,7 +154,7 @@ z-index: 6;
 
 /* ----------------------------------------STORY FORMS AND STORY TEXT BOX */
 article{
-  width: 300px;
+  width: 350px;
   height: 500px;
   display: flex;
   flex-direction: column;
@@ -167,24 +162,28 @@ article{
   align-items: center;
 }
 
-article h2{
-  margin:0px;
-  font-family: 'Kaushan Script', cursive;
-  font-size:20pt;
-}
-
 article p {
-  height: 60%;
-  width: 100%;
+  height:75%;
+  width: 90%;
   overflow-y: scroll;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 14pt;
   text-align: center;
 }
 
-.next{
-  margin-bottom: 30px;
-  margin-top: 15px;
+#next{
+  margin-top: 30px;
+  background-color: black;
+  color: white;
+  width: 150px;
+  height: 50px;
+  border-radius: 30px;
+  transition-duration: 1s;
+  display: none;
+}
+#next:hover{
+  color: paleturquoise;
+  box-shadow: 0 0 10px 10px paleturquoise;
 }
 
 form {
@@ -197,7 +196,6 @@ form {
   justify-content: center;
   height:150px;
   width:100%;
-  box-shadow: 0 12px 16px 0 darkblue, 0px 17px 40px 0 lightsteelblue
 }
 
 .formlabel {
@@ -208,14 +206,13 @@ form {
 }
 
 .choices{
-  width:300px;
-  margin-top:10px;
-  margin-bottom:10px;
+  width:350px;
+  margin: 20px;
   display:flex;
   justify-content: space-around;
   align-items: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 14pt;
+  font-size: 12pt;
 }
 
 article .button {

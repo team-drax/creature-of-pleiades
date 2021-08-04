@@ -6,6 +6,7 @@ const evoTwo = ['../img/creatureparts/2-GARBAGE.png', '../img/creatureparts/2-VE
 const evoThree = ['../img/creatureparts/3-TRUTH.png', '../img/creatureparts/3-IGNORE.png', '../img/creatureparts/3-LIE.png'];
 const evoFour = ['../img/creatureparts/4-UPSTAIRS.png', '../img/creatureparts/4-BACKDOOR.png', '../img/creatureparts/4-OPEN.png'];
 const evoFive = ['../img/creatureparts/5-INSTINCTS.png', '../img/creatureparts/5-LAB.png', '../img/creatureparts/5-SPACESHIP.png'];
+const evoSix = ['../img/creatureparts/6-FINALBAD.png', '../img/creatureparts/6-FINALGOOD.png'];
 //Variables for the different evolution images
 const creatureDivElem = document.getElementById('creature');
 //variable for the location of the creature div
@@ -14,12 +15,15 @@ const formTwoElem = document.getElementById('secondchoice');
 const formThreeElem = document.getElementById('thirdchoice');
 const formFourElem = document.getElementById('fourthchoice');
 const formFiveElem = document.getElementById('fifthchoice');
-//variable for the location for the question one form
+//form location variables
+const startButtonElem = document.getElementById('startgame');
+//variable for the start button on the game page
 let formArray = [formOneElem, formTwoElem, formThreeElem, formFourElem, formFiveElem];
 //an array for the references to the form elements for each of the 5 evolution forms.
 let myCreature = new Creature();
 // creates a creature named Randy and sets it to variable myCreature
 console.log(myCreature);
+
 
 
 /* --------------------------------------------------------------------------------CONSTRUCTOR */
@@ -79,7 +83,6 @@ Creature.prototype.renderCreature = function () {
   }
 }
 //method for rendering the creature on the page.  Checks for trait values on the myCreature instance, and then creates an image based on the image path in the array.  Does this for each layer that has a value on the creature.
-
 Creature.prototype.addFirstTrait = function (choiceIndex) {
   this.traitOne = evoOne[choiceIndex];
 }
@@ -96,7 +99,6 @@ Creature.prototype.addFifthTrait = function (choiceIndex) {
   this.traitFive = evoFive[choiceIndex];
 }
 //prototype methods that pull img links from arrays and put them into the creatures traits
-
 Creature.prototype.changeCreatureScore = function (value) {
   if (value === 0) {
     this.creatureScore++;
@@ -105,12 +107,14 @@ Creature.prototype.changeCreatureScore = function (value) {
   }
 }
 //changes creature score
-
 Creature.prototype.getFinalScore = function () {
   let finalScore = this.creatureScore;
   return finalScore;
 }
 // this gets the final score of myCreature
+
+
+
 
 /* --------------------------------------------------------------------------------GLOBAL FUNCTIONS */
 
@@ -119,9 +123,14 @@ Creature.prototype.getFinalScore = function () {
 
 
 /* --------------------------------------------------------------------------------HANDLER FUNCTIONS */
+function handleStartButton(e){
+  chapterArray[currentChapterIndex].getNextPara();
+  chapterArray[currentChapterIndex].pullChapterData();
+  nextButtonElem.style.display = 'block';
+}
+
 function handleSubmitOne(e) {
   e.preventDefault();
-  console.log(e);
   for (let i = 0; i < 3; i++) {
     if (e.target[i].checked) {
       let checkedValue = parseInt(e.target[i].value);
@@ -133,7 +142,6 @@ function handleSubmitOne(e) {
       nextButtonElem.style.display = 'block';
       formOneElem.style.display = 'none';
       chapterArray[currentChapterIndex].pullChapterData();
-
     }
   }
 }
@@ -145,12 +153,11 @@ function handleSubmitTwo(e) {
       myCreature.addSecondTrait(checkedValue);
       myCreature.renderCreature();
       myCreature.changeCreatureScore(checkedValue);
-      currentChapterIndex++;
+      currentChapterIndex++
       chapterArray[currentChapterIndex].getNextPara();
       nextButtonElem.style.display = 'block';
       formTwoElem.style.display = 'none';
       chapterArray[currentChapterIndex].pullChapterData();
-
     }
   }
 }
@@ -162,12 +169,11 @@ function handleSubmitThree(e) {
       myCreature.addThirdTrait(checkedValue);
       myCreature.renderCreature();
       myCreature.changeCreatureScore(checkedValue);
-      currentChapterIndex++;
+      currentChapterIndex++
       chapterArray[currentChapterIndex].getNextPara();
       nextButtonElem.style.display = 'block';
       formThreeElem.style.display = 'none';
       chapterArray[currentChapterIndex].pullChapterData();
-
     }
   }
 }
@@ -179,12 +185,11 @@ function handleSubmitFour(e) {
       myCreature.addFourthTrait(checkedValue);
       myCreature.renderCreature();
       myCreature.changeCreatureScore(checkedValue);
-      currentChapterIndex++;
+      currentChapterIndex++
       chapterArray[currentChapterIndex].getNextPara();
       nextButtonElem.style.display = 'block';
       formFourElem.style.display = 'none';
       chapterArray[currentChapterIndex].pullChapterData();
-
     }
   }
 }
@@ -196,17 +201,15 @@ function handleSubmitFive(e) {
       myCreature.addFifthTrait(checkedValue);
       myCreature.renderCreature();
       myCreature.changeCreatureScore(checkedValue);
-      // currentChapterIndex++;
-      console.log(currentChapterIndex);
-      console.log(chapterArray);
-      console.log(myCreature.creatureScore);
       if (myCreature.getFinalScore() === -5) {
         currentChapterIndex++;
         chapterArray[currentChapterIndex].getNextPara();
         nextButtonElem.style.display = 'block';
         formFiveElem.style.display = 'none';
         chapterArray[currentChapterIndex].pullChapterData();
-        console.log(currentChapterIndex);
+        myCreature.traitSix = evoSix[0];
+        console.log(myCreature);
+        myCreature.renderCreature();
       } else if (myCreature.getFinalScore() > -5 && myCreature.getFinalScore() < -1) {
         currentChapterIndex += 2;
         chapterArray[currentChapterIndex].getNextPara();
@@ -231,7 +234,8 @@ function handleSubmitFive(e) {
         nextButtonElem.style.display = 'block';
         formFiveElem.style.display = 'none';
         chapterArray[currentChapterIndex].pullChapterData();
-
+        myCreature.traitSix = evoSix[1];
+        myCreature.renderCreature();
       }
     }
   }
@@ -242,6 +246,7 @@ function handleSubmitFive(e) {
 
 
 /* --------------------------------------------------------------------------------LISTENERS */
+startButtonElem.addEventListener('click', handleStartButton);
 formOneElem.addEventListener('submit', handleSubmitOne);
 formTwoElem.addEventListener('submit', handleSubmitTwo);
 formThreeElem.addEventListener('submit', handleSubmitThree);
