@@ -43,8 +43,7 @@ main{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: lightgrey;
-  background-image: url(../img/paper.jpeg);
+  background-image: url(../img/background/thelabbg.png);
 }
 
 footer{
@@ -69,8 +68,9 @@ main div {
 #title{
   width:300px;
   height: 120px;
-  background-color: darkgrey;
+  background-image: url(../img/background/titlebg.png);
   border-radius: 50px;
+  color:seashell;
 }
 #title h2, #title h3{
   text-align: left;
@@ -96,15 +96,16 @@ main div {
 
 #rightside{
   margin-right:100px;
-  background-color: darkgrey;
+  background-image: url(../img/background/article-bg.png);
+  color:seashell;
   display:flex;
   justify-content: center;
   align-items: center;
 }
 
 .button {
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   width: 150px;
   height: 50px;
   border-radius: 10px;
@@ -123,7 +124,7 @@ main div {
 #creature {
   width:300px;
   height: 300px;
-  background-color: darkgrey;
+  background-image: url(../img/background/creaturebg.png);
   margin-bottom: 0px;
 }
 
@@ -236,7 +237,7 @@ article .button {
   background: steelblue; 
 }
 ::-webkit-scrollbar-thumb {
-  background: black; 
+  background: steelblue; 
 }
 ::-webkit-scrollbar-thumb:hover {
   background: lightgrey; 
