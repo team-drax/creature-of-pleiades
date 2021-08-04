@@ -21,8 +21,10 @@ let chapterArray = [];
 
 
 //---------------------------------------------CONSTRUCTOR FUNCTION
-function Chapter(chaptername){
+function Chapter(chaptername, chaptertitle, backgroundimage){
   this.chaptername = chaptername;
+  this.chaptertitle = chaptertitle;
+  this.backgroundimage = backgroundimage;
   this.paragraphIndex = 0;
   this.paragraphArray = [];
 }
@@ -50,13 +52,25 @@ Chapter.prototype.isAtLastPara = function(){
 };
 //checks if we are at the last paragraph of the chapter by checking if the Chapters paragraph index is equal to the length of the array.
 
+Chapter.prototype.pullChapterData = function() {
+  let h2Elem = document.getElementById('chapterNumber');
+  let chapterName = this.chaptername;
+  h2Elem.innerHTML = chapterName;
 
+  let h3Elem = document.getElementById('chapterTitle');
+  let chapterTitle = this.chaptertitle;
+  h3Elem.innerHTML = chapterTitle;
+
+  let mainElem = document.getElementById('gamebackground');
+  let chapterImage = this.backgroundimage;
+  mainElem.style.backgroundImage = chapterImage;
+}
 
 
 
 //---------------------------------------------Global Functions
-function createAndPushChapter(chaptername){
-  let chapter = new Chapter(chaptername);
+function createAndPushChapter(chaptername, chaptertitle, backgroundimage){
+  let chapter = new Chapter(chaptername, chaptertitle, backgroundimage);
   chapterArray.push(chapter);
   return chapter;
 }
@@ -91,17 +105,18 @@ nextButtonElem.addEventListener('click', handleNext);
 
 
 //---------------------------------------------Call Function
-let firstChapter = createAndPushChapter('The Lab');
-let secondChapter = createAndPushChapter('Home');
-let thirdChapter = createAndPushChapter('Coworker Confrontation');
-let fourthChapter = createAndPushChapter('The Villain Organization');
-let fifthChapter = createAndPushChapter('Bringing the Creature Home');
+let firstChapter = createAndPushChapter('Chapter 1', 'The Lab', 'url(../img/background/thelabbg.png)');
+console.log(chapterArray[0]);
+let secondChapter = createAndPushChapter('Chapter 2', 'Home', 'url(../img/paper.jpeg)');
+let thirdChapter = createAndPushChapter('Chapter 3', 'Coworker Confrontation', 'url(../img/background/thelabbg.png)');
+let fourthChapter = createAndPushChapter('Chapter 4', 'The Villain Organization', 'url(../img/background/thelabbg.png)');
+let fifthChapter = createAndPushChapter('Chapter 5', 'Bringing the Creature Home', 'url(../img/background/thelabbg.png)');
 
-let resoulutionChapterWorst = createAndPushChapter('The End');
-let resolutionChapterNegative = createAndPushChapter('the End');
-let resolutionChapterNeutral = createAndPushChapter('the end');
-let resolutionChapterPositive = createAndPushChapter('the end');
-let resolutionChapterBest = createAndPushChapter('the end');
+let resoulutionChapterWorst = createAndPushChapter('The End 1', 'Worst');
+let resolutionChapterNegative = createAndPushChapter('The End 2', 'Bad');
+let resolutionChapterNeutral = createAndPushChapter('The End 3', 'Neutral');
+let resolutionChapterPositive = createAndPushChapter('The End 4', 'Good');
+let resolutionChapterBest = createAndPushChapter('The End 5', 'Best');
 //creates and pushes the 5 chapters into the chapter array
 
 
