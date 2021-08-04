@@ -28,7 +28,6 @@ header {
 }
 
 #headerImg {
-  /* border: thin solid black; */
   border-radius: 200px;
   width: 100px;
   height: 100px;
@@ -131,8 +130,8 @@ main div {
 
 #creature img {
   position: absolute;
-  margin-left:25px;
-  margin-top:25px;
+  margin-left:50px;
+  margin-top:50px;
 }
 #traitone{
 z-index: 1;
@@ -189,11 +188,10 @@ article p {
 }
 
 form {
-  /* visibility: hidden; */
   background-color: black;
   border-radius: 20px;
   color: lightsteelblue;
-  display:flex;
+  display:none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -236,7 +234,7 @@ article .button {
   width: 5px;
 }
 ::-webkit-scrollbar-track {
-  background:black; 
+  background: steelblue; 
 }
 ::-webkit-scrollbar-thumb {
   background: steelblue; 

@@ -2,20 +2,21 @@
 //---------------------------------------------GLOBAL VARIABLES
 const pElem = document.getElementById('paragraph');
 //gets the location of the paragraph element and assigns it to variable
-
 //gets the location of the next button element and assigns it to nextButtonElem
 const nextButtonElem = document.getElementById('next');
-
 //gets the location of the next button element and assigns it to nextChapterButtonElem
 const nextChapterButtonElem = document.getElementById('nextChapter');
-
 //We want to make the button hidden at first and only make it visible at the end of a chapter
-nextChapterButtonElem.style.visibility = 'hidden';
-
+const storyArticleElem = document.getElementById('story');
+//variable for the location of the article.  used in appending forms.
 let currentChapterIndex = 0;
 //assigns the current chapter to the index of 0 as a base point.  this will advance when we get to the last paragraph in the chapter per the
 let chapterArray = [];
 //creates an array that houses each instance of chapters made from the chapter constructor using the createAndPushChapters function
+
+
+
+// nextChapterButtonElem.style.visibility = 'hidden';
 
 
 
@@ -34,21 +35,16 @@ Chapter.prototype.addParagraph = function(text){
   this.paragraphArray.push(text);
 };
 //adds a text block to the paragraph array
-
 Chapter.prototype.getNextPara = function(){
   let nextPara = this.paragraphArray[this.paragraphIndex];
   this.paragraphIndex++;
   pElem.innerHTML = nextPara;
 };
 //grabs the next paragraph from the Chapter using the Chapters paragraphIndex as reference for the paragraphArray, then increases the index by one
-
 Chapter.prototype.isAtLastPara = function(){
-  console.log(this.paragraphArray.length)
   if (this.paragraphIndex == this.paragraphArray.length-1 || this.paragraphArray.length == 1){
-    console.log(true)
     return true;
   } else {
-    console.log(false)
     return false;
   }
 };
@@ -56,10 +52,13 @@ Chapter.prototype.isAtLastPara = function(){
 
 
 
+
+
 //---------------------------------------------Global Functions
 function createAndPushChapter(chaptername){
   let chapter = new Chapter(chaptername);
   chapterArray.push(chapter);
+  return chapter;
 }
 //creates 5 chapter objects and pushes them to the chapterArray
 
@@ -71,65 +70,41 @@ function createAndPushChapter(chaptername){
 //---------------------------------------------listener events
 function handleNext(e){
   if (chapterArray[currentChapterIndex].isAtLastPara()){
-    console.log(chapterArray[currentChapterIndex])
     chapterArray[currentChapterIndex].getNextPara();
-    nextButtonElem.style.visibility = 'hidden';
-    nextChapterButtonElem.style.visibility = 'visible';
-    document.getElementById('testform').style.visibility = 'visible';
+    nextButtonElem.style.display = 'none';
+    formArray[currentChapterIndex].style.display = 'flex';
   }else{
-    console.log(chapterArray[currentChapterIndex])
     chapterArray[currentChapterIndex].getNextPara();
   }
 }
 //HANDLES THE FUNCTIONS OF GOING TO THE NEXT PARAGRAPH
 
 
-//HANDLE THE FORM SUBMITTAL IN WHICH WE MOVE TO THE NEXT CHAPTER
-function handleNextChapter(e){
-  //checking if we'e at the last chapter. If so, we hide them buttons
-  if(currentChapterIndex == 6){
-    nextChapterButtonElem.style.visibility = 'hidden';
-    nextButtonElem.style.visibility = 'hidden';
-    return document.getElementById('testform').style.visibility = 'visible';
-  } else {
-  console.log("current chapter", currentChapterIndex)
-  console.log(chapterArray[currentChapterIndex])
-    currentChapterIndex++
-    chapterArray[currentChapterIndex].getNextPara();
-    nextChapterButtonElem.style.visibility = 'hidden';
-    nextButtonElem.style.visibility = 'visible';
-  }
-}
-// currentChapterIndex++;
-
 
 
 
 //---------------------------------------------Listener
 nextButtonElem.addEventListener('click', handleNext);
-nextChapterButtonElem.addEventListener('click', handleNextChapter);
 //listens for presses on the next button
 
-
-//NEED A LISTENER FOR FORM SUBMITTAL
 
 
 
 //---------------------------------------------Call Function
-createAndPushChapter('chapter 1 - part 1');
-createAndPushChapter('chapter 1 - part 2');
-createAndPushChapter('chapter 1 - part 3');
-createAndPushChapter('chapter 2 - part 1');
-createAndPushChapter('chapter 2 - part 2');
-createAndPushChapter('chapter 2 - part 3');
-createAndPushChapter('chapter 3 - part 1');
-createAndPushChapter('chapter 3 - part 2');
-createAndPushChapter('chapter 3 - part 3');
-createAndPushChapter('chapter 4 - part 1');
-createAndPushChapter('chapter 4 - part 2');
-createAndPushChapter('chapter 4 - part 3');
-createAndPushChapter('chapter 5 - the return home');
+let firstChapter = createAndPushChapter('The Lab');
+let secondChapter = createAndPushChapter('Home');
+let thirdChapter = createAndPushChapter('Coworker Confrontation');
+let fourthChapter = createAndPushChapter('The Villain Organization');
+let fifthChapter = createAndPushChapter('Bringing the Creature Home');
+
+let resoulutionChapterWorst = createAndPushChapter('The End');
+let resolutionChapterNegative = createAndPushChapter('the End');
+let resolutionChapterNeutral = createAndPushChapter('the end');
+let resolutionChapterPositive = createAndPushChapter('the end');
+let resolutionChapterBest = createAndPushChapter('the end');
 //creates and pushes the 5 chapters into the chapter array
+
+
 chapterArray[0].addParagraph('You’re entering in a restricted area. Find the Glowing EGG');
 chapterArray[0].addParagraph('As the user picks the egg, the egg will vibrate as a result setting the alarm off. Then the egg will hatch, and the creature will pop out.');
 chapterArray[0].addParagraph(' How do you want to proceed?');
@@ -141,58 +116,50 @@ the creature in hand, or finds it there after 7 seconds`);
 chapterArray[1].addParagraph(`User gets home from work, nervous and confused as to what to do with the
 creature.`);
 chapterArray[1].addParagraph('User decides, rationally, that feeding the creature is step #1');
-chapterArray[3].addParagraph(`User is directed to click on the food option of choice that they want to feed the
+chapterArray[1].addParagraph(`User is directed to click on the food option of choice that they want to feed the
 creature. Meat, garbage, vegetables. User clicks the option they want and the
 first transformation of the creature begins.`);
-chapterArray[3].addParagraph(`should I share the knowledge of the creature's existence`);
-chapterArray[3].addParagraph(`The user receives a notification on their tablet/phone from a co-worker
-asking “where is the egg?`);
-chapterArray[3].addParagraph(`User is scared and does not know whether their co-worker is genuinely
-interested or against them.`);
-chapterArray[3].addParagraph('User is given the option to tell the truth, ignore the notification or lie.');
-chapterArray[3].addParagraph(`Regardless of user decision, there is a shift in the universe as unexpected
-meteor showers arise that appear to be linked to this creature’s
-existence/escape.`);
-chapterArray[4].addParagraph(`“Wow! What a day! Not only was I late for work again, I discovered this
+chapterArray[1].addParagraph(`“Wow! What a day! Not only was I late for work again, I discovered this
 creature that’s as ugly as the Chupacabra!” | “Surely someone saw me
 take it from the lab, but I feel bad that this... thing was growing in our lab
 without my knowledge. What is it? A government experiment? An
 experiment by my lab-mate?`);
-chapterArray[4].addParagraph(`“Why did I do this? Maybe I should let it go? No! I live in a neighborhood
+chapterArray[1].addParagraph(`“Why did I do this? Maybe I should let it go? No! I live in a neighborhood
 with kids and elderly folk. Should I stuff it in the dumpster? Maybe..”
 ○ “Who am I kidding? This thing, whatever it is, is a living lifeform of
 unexplained origin. I think I’ll try to keep it alive and maybe uncover what’s
 going on here.”`);
-chapterArray[4].addParagraph(`“What would I want if I was found in a strange place? Food!” | Let’s see
-  what I’ve got for this thing. Meat? I mean it is a baby. Garbage? I mean,
-  why not? But it’s a baby.. Vegetables? The foundation of health..but it’s a
-  baby..”`);
-chapterArray[4].addParagraph(`“Good, I’m glad it’s got some food in it. | You know what? Instead of
-  seeing it, as an object, why don’t I assign a name to this little thing :) I’m
-  going to name it...”`);
-chapterArray[4].addParagraph(`what are we going to do about you?
- “I wonder, should I alert anyone of the knowledge of this creature's
+chapterArray[1].addParagraph(`“What would I want if I was found in a strange place? Food!” | Let’s see
+what I’ve got for this thing. Meat? I mean it is a baby. Garbage? I mean,
+why not? But it’s a baby.. Vegetables? The foundation of health..but it’s a
+baby..”`);
+chapterArray[2].addParagraph(`“Good, I’m glad it’s got some food in it. | You know what? Instead of
+seeing it, as an object, why don’t I assign a name to this little thing :) I’m
+going to name it...”`);
+chapterArray[2].addParagraph(`what are we going to do about you?
+“I wonder, should I alert anyone of the knowledge of this creature's
 existence? Well, on one hand, I did technically steal it from the lab. So, that may not go over well.” `);
-chapterArray[4].addParagraph(`“But, I don’t think I could keep this a secret for too long nor can I see myself actually nurturing'`);
-chapterArray[4].addParagraph(`“I can do it. It’s my responsibility now to care for (creatureName) and
+chapterArray[2].addParagraph(`“But, I don’t think I could keep this a secret for too long nor can I see myself actually nurturing'`);
+chapterArray[2].addParagraph(`“I can do it. It’s my responsibility now to care for (creatureName) and
 ultimately make a decision.`);
+chapterArray[2].addParagraph(`The user receives a notification on their tablet/phone from a co-worker
+asking “where is the egg?`);
 chapterArray[4].addParagraph(`“Hey buddy!! there was an egg in a crate in our lab, did you
 happen to see what happened to it? Let me know.”  Tell the truth or Lie`);
-chapterArray[4].addParagraph(`Regardless of user decision, there is a shift in the universe as unexpected
-  meteor showers arise that appear to be linked to this creature’s
-  existence/escape.`);
+chapterArray[2].addParagraph(`User is scared and does not know whether their co-worker is genuinely
+interested or against them.`);
+chapterArray[2].addParagraph('User is given the option to tell the truth, ignore the notification or lie.');
+chapterArray[3].addParagraph(`Regardless of user decision, there is a shift in the universe as unexpected
+meteor showers arise that appear to be linked to this creature’s existence/escape.`);
 chapterArray[5].addParagraph(`“Wow! What a day! Not only was I late for work again, I saw this, this,
-  creature that’s as ugly as the Chupacabra!” || “I wonder what that thing
-  was? “And how did I not notice this... thing, was growing in our lab without
-  my knowledge? Is it a government experiment? An experiment by my
-  lab-mate`);
+creature that’s as ugly as the Chupacabra!” || “I wonder what that thing
+was? “And how did I not notice this... thing, was growing in our lab without
+my knowledge? Is it a government experiment? An experiment by my
+lab-mate`);
 chapterArray[5].addParagraph('creature enters the house and scares the user');
 chapterArray[5].addParagraph('“What the!? How? How did, this, thing follow me home!? Aye Dios Mio!”');
 chapterArray[5].addParagraph(`“This thing, whatever it is, is a living lifeform of unexplained origin. It
 doesn’t look that scary, so I think I’ll try to keep it alive and maybe uncover what’s going on here.”`);
-chapterArray[5].addParagraph(`“Now… what would I want if I was found in a strange place? Food!” | Let’s
-see what I’ve got for this thing. Meat? I mean it is a baby. Garbage? I
-mean, why not? But it’s a baby.. Vegetables? The foundation of health..but it’s a baby..”`);
 chapterArray[5].addParagraph(`“Good, I’m glad it’s got some food in it. | You know what? Instead of
 seeing it, as an object, why don’t I assign a name to this little thing :) I’m
 going to name it...”`);
