@@ -28,8 +28,10 @@ function Creature (){
   this.traitThree = null;
   this.traitFour = null;
   this.traitFive = null;
+  this.traitSix = null;
   this.creatureScore = 0;
 }
+
 
 
 
@@ -118,7 +120,6 @@ function handleSubmitOne(e){
       let checkedValue = parseInt(e.target[i].value);
       myCreature.addFirstTrait(checkedValue);
       myCreature.renderCreature();
-      formOneElem.removeEventListener('submit', handleSubmitOne);
       myCreature.changeCreatureScore(checkedValue);
     }
   }
@@ -130,7 +131,6 @@ function handleSubmitTwo(e){
       let checkedValue = parseInt(e.target[i].value);
       myCreature.addSecondTrait(checkedValue);
       myCreature.renderCreature();
-      formOneElem.removeEventListener('submit', handleSubmitTwo);
       myCreature.changeCreatureScore(checkedValue);
     }
   }
@@ -142,7 +142,6 @@ function handleSubmitThree(e){
       let checkedValue = parseInt(e.target[i].value);
       myCreature.addThirdTrait(checkedValue);
       myCreature.renderCreature();
-      formOneElem.removeEventListener('submit', handleSubmitThree);
       myCreature.changeCreatureScore(checkedValue);
     }
   }
@@ -154,7 +153,6 @@ function handleSubmitFour(e){
       let checkedValue = parseInt(e.target[i].value);
       myCreature.addFourthTrait(checkedValue);
       myCreature.renderCreature();
-      formOneElem.removeEventListener('submit', handleSubmitFour);
       myCreature.changeCreatureScore(checkedValue);
     }
   }
@@ -166,7 +164,6 @@ function handleSubmitFive(e){
       let checkedValue = parseInt(e.target[i].value);
       myCreature.addFifthTrait(checkedValue);
       myCreature.renderCreature();
-      formOneElem.removeEventListener('submit', handleSubmitFive);
       myCreature.changeCreatureScore(checkedValue);
     }
   }
