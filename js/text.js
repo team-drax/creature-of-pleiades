@@ -2,8 +2,16 @@
 //---------------------------------------------GLOBAL VARIABLES
 const pElem = document.getElementById('paragraph');
 //gets the location of the paragraph element and assigns it to variable
-const nextButtonElem = document.getElementById('next');
+
 //gets the location of the next button element and assigns it to nextButtonElem
+const nextButtonElem = document.getElementById('next');
+
+//gets the location of the next button element and assigns it to nextChapterButtonElem
+const nextChapterButtonElem = document.getElementById('nextChapter');
+
+//We want to make the button hidden at first and only make it visible at the end of a chapter
+nextChapterButtonElem.style.visibility = 'hidden';
+
 let currentChapterIndex = 0;
 //assigns the current chapter to the index of 0 as a base point.  this will advance when we get to the last paragraph in the chapter per the
 let chapterArray = [];
@@ -35,9 +43,12 @@ Chapter.prototype.getNextPara = function(){
 //grabs the next paragraph from the Chapter using the Chapters paragraphIndex as reference for the paragraphArray, then increases the index by one
 
 Chapter.prototype.isAtLastPara = function(){
-  if (this.paragraphIndex == this.paragraphArray.length-1){
+  console.log(this.paragraphArray.length)
+  if (this.paragraphIndex == this.paragraphArray.length-1 || this.paragraphArray.length == 1){
+    console.log(true)
     return true;
   } else {
+    console.log(false)
     return false;
   }
 };
@@ -60,10 +71,13 @@ function createAndPushChapter(chaptername){
 //---------------------------------------------listener events
 function handleNext(e){
   if (chapterArray[currentChapterIndex].isAtLastPara()){
+    console.log(chapterArray[currentChapterIndex])
     chapterArray[currentChapterIndex].getNextPara();
     nextButtonElem.style.visibility = 'hidden';
+    nextChapterButtonElem.style.visibility = 'visible';
     document.getElementById('testform').style.visibility = 'visible';
   }else{
+    console.log(chapterArray[currentChapterIndex])
     chapterArray[currentChapterIndex].getNextPara();
   }
 }
@@ -71,6 +85,21 @@ function handleNext(e){
 
 
 //HANDLE THE FORM SUBMITTAL IN WHICH WE MOVE TO THE NEXT CHAPTER
+function handleNextChapter(e){
+  //checking if we'e at the last chapter. If so, we hide them buttons
+  if(currentChapterIndex == 6){
+    nextChapterButtonElem.style.visibility = 'hidden';
+    nextButtonElem.style.visibility = 'hidden';
+    return document.getElementById('testform').style.visibility = 'visible';
+  } else {
+  console.log("current chapter", currentChapterIndex)
+  console.log(chapterArray[currentChapterIndex])
+    currentChapterIndex++
+    chapterArray[currentChapterIndex].getNextPara();
+    nextChapterButtonElem.style.visibility = 'hidden';
+    nextButtonElem.style.visibility = 'visible';
+  }
+}
 // currentChapterIndex++;
 
 
@@ -78,6 +107,7 @@ function handleNext(e){
 
 //---------------------------------------------Listener
 nextButtonElem.addEventListener('click', handleNext);
+nextChapterButtonElem.addEventListener('click', handleNextChapter);
 //listens for presses on the next button
 
 
@@ -106,13 +136,11 @@ chapterArray[0].addParagraph(' How do you want to proceed?');
 chapterArray[0].addParagraph('Scare the creature and go home.');
 chapterArray[0].addParagraph('Take the creature home with you.');
 chapterArray[0].addParagraph('Leave the creature in the lap while you go home.');
-chapterArray[1].addParagraph('beginning of chapter 1 part 2');
-chapterArray[2].addParagraph('beginning of chapter 1 part 3');
-chapterArray[3].addParagraph(`Upon finding the creature at work, the user has returned home from work, with
+chapterArray[1].addParagraph(`Upon finding the creature at work, the user has returned home from work, with
 the creature in hand, or finds it there after 7 seconds`);
-chapterArray[3].addParagraph(`User gets home from work, nervous and confused as to what to do with the
+chapterArray[1].addParagraph(`User gets home from work, nervous and confused as to what to do with the
 creature.`);
-chapterArray[3].addParagraph('User decides, rationally, that feeding the creature is step #1');
+chapterArray[1].addParagraph('User decides, rationally, that feeding the creature is step #1');
 chapterArray[3].addParagraph(`User is directed to click on the food option of choice that they want to feed the
 creature. Meat, garbage, vegetables. User clicks the option they want and the
 first transformation of the creature begins.`);
