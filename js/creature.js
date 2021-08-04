@@ -15,6 +15,8 @@ const formThreeElem = document.getElementById('thirdchoice');
 const formFourElem = document.getElementById('fourthchoice');
 const formFiveElem = document.getElementById('fifthchoice');
 //variable for the location for the question one form
+let formArray = [formOneElem, formTwoElem, formThreeElem, formFourElem, formFiveElem];
+//an array for the references to the form elements for each of the 5 evolution forms.
 let myCreature = new Creature();
 // creates a creature named Randy and sets it to variable myCreature
 console.log(myCreature);
@@ -121,6 +123,17 @@ function handleSubmitOne(e){
       myCreature.addFirstTrait(checkedValue);
       myCreature.renderCreature();
       myCreature.changeCreatureScore(checkedValue);
+      currentChapterIndex++;
+      chapterArray[currentChapterIndex].getNextPara();
+      nextButtonElem.style.display = 'block';
+      formOneElem.style.display = 'none';
+      // if (checkedValue === 0){
+      //   //go to positive chapter two
+      // }else if (checkedValue === 1){
+      //   //go to neutral path chapter two
+      // }else{
+      //   //go to negative path chapter two
+      // }
     }
   }
 }
@@ -132,6 +145,10 @@ function handleSubmitTwo(e){
       myCreature.addSecondTrait(checkedValue);
       myCreature.renderCreature();
       myCreature.changeCreatureScore(checkedValue);
+      currentChapterIndex++;
+      chapterArray[currentChapterIndex].getNextPara();
+      nextButtonElem.style.display = 'block';
+      formTwoElem.style.display = 'none';
     }
   }
 }
@@ -143,6 +160,10 @@ function handleSubmitThree(e){
       myCreature.addThirdTrait(checkedValue);
       myCreature.renderCreature();
       myCreature.changeCreatureScore(checkedValue);
+      currentChapterIndex++;
+      chapterArray[currentChapterIndex].getNextPara();
+      nextButtonElem.style.display = 'block';
+      formThreeElem.style.display = 'none';
     }
   }
 }
@@ -154,6 +175,10 @@ function handleSubmitFour(e){
       myCreature.addFourthTrait(checkedValue);
       myCreature.renderCreature();
       myCreature.changeCreatureScore(checkedValue);
+      currentChapterIndex++;
+      chapterArray[currentChapterIndex].getNextPara();
+      nextButtonElem.style.display = 'block';
+      formFourElem.style.display = 'none';
     }
   }
 }
@@ -165,6 +190,10 @@ function handleSubmitFive(e){
       myCreature.addFifthTrait(checkedValue);
       myCreature.renderCreature();
       myCreature.changeCreatureScore(checkedValue);
+      currentChapterIndex++;
+      chapterArray[currentChapterIndex].getNextPara();
+      nextButtonElem.style.display = 'block';
+      formFiveElem.style.display = 'none';
     }
   }
 }
