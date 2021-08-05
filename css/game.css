@@ -280,7 +280,8 @@ aside {
 }
 
 a {
-  color: #082b7d;
+  color: #ffffff;
+  text-decoration: none;
 }
 
 a:hover {
