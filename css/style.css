@@ -15,7 +15,6 @@ body {
 
 /* ---------------------------------------------------------------------------------------------------------------------- */
 
-
 header {
   width: 1920px;
   border-bottom: medium  grey;
@@ -25,7 +24,6 @@ header {
   justify-content: flex-start;
   background-image: linear-gradient(#082b7d, #3292d7, #FFFFFF);
 }
-
 #gameTitle {
   font-family: 'Kaushan Script', cursive;
   font-size: 5em;
@@ -33,7 +31,6 @@ header {
   color:rgb(0, 0, 0);
   margin: 10px 0px 10px 50px;
 }
-
 #headerImg {
   /* border: thin solid black; */
   border-radius: 200px;
@@ -43,16 +40,13 @@ header {
   margin: 5px 0px 5px 50px;
   box-shadow: 0px 0px 10px rgb(255, 255, 255);
 }
-
 #headerImg:hover {
   -webkit-transform: scale(1.1) rotate(4deg);
   transform: scale(1.1) rotate(4deg);
   box-shadow: 0px 0px 60px gold;
 }
 
-
 /* ---------------------------------------------------------------------------------------------------------------------- */
-
 
 main {
   background-color: black;
@@ -70,7 +64,6 @@ main {
 }
 
 /* ---------------------------------------------------------------------------------------------------------------------- */
-
 
 #section1 {
   /* background-color: pink; */
@@ -93,7 +86,6 @@ main {
   box-shadow: 0px 0px 20px rgb(110, 142, 191);
   animation: glowing 5s infinite;
   
-
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
   -webkit-transition-duration: 0.3s;
@@ -127,7 +119,6 @@ main {
 
 /* ---------------------------------------------------------------------------------------------------------------------- */
 
-
 #section2 {
   /* border: thin solid black; */
   display: flex;
@@ -138,19 +129,16 @@ main {
   /* margin-top: 50px;
   margin-bottom: 50px; */
 }
-
 #section2Div {
   position: relative;
   z-index: 2;
 }
-
 #carousel1 {
   width: 800px;
   /* height: 60%; */
   position: relative;
   z-index: 2;
 }
-
 #creatureOnCarousel {
   width: 100px;
   height: 100px;
@@ -163,7 +151,6 @@ main {
   transform: rotate(10deg);
   /* transform-origin: 0 0; */
 }
-
 #creatureOnCarousel:hover {
   width: 300px;
   height: 300px;
@@ -183,7 +170,6 @@ main {
   background-image: linear-gradient(#082b7d, #3292d7, #FFFFFF, #3292d7, #082b7d);
 
 }
-
 legend {
   font-family: 'Kaushan Script', cursive;
   text-shadow: 0.3px 0.3px white;
@@ -191,7 +177,6 @@ legend {
   font-size: 1.9em;
   padding: 10px;
 }
-
 #fieldsetElem {
   display: flex;
   flex-direction: column;
@@ -202,7 +187,6 @@ legend {
   align-items: center;
 
 }
-
 .startGameLabel {
   display: flex;
   flex-direction: column;
@@ -214,7 +198,6 @@ legend {
   /* background-color: red; */
   /* justify-items: space-between; */
 }
-
 .startGameInput {
   margin: 5px 0px;
   /* margin-left: 20px; */
@@ -229,20 +212,17 @@ legend {
   flex-direction: column;
   width: 300px;
 }
-
 #h2Section3 {
   font-family: sans-serif;
   font-size: 2em;
   text-align: center;
   margin-top: 5px;
 }
-
 #bgImgSection3 {
   border: medium ridge gold;
   background-color: black;
   margin-top: 5px;
 }
-
 #pSection3 {
   font-family:sans-serif;
   font-size: 1.1em;
@@ -251,9 +231,6 @@ legend {
   height: 200px;
   overflow: auto;
 }
-
-
-
 
 /* ---------------------------------------------------------------------------------------------------------------------- */
 
@@ -271,12 +248,10 @@ footer {
   color: white;
   background-image: linear-gradient(#FFFFFF, #3292d7, #082b7d);
 }
-
 aside {
   border: medium solid black;
   border-radius: 25px;
 }
-
 #pAside {
   margin: 10px;
   text-align: center;
@@ -284,7 +259,6 @@ aside {
   font-family: cursive;
   /* text-decoration: underline; */
 }
-
 #pAsideLink {
   margin: 10px;
   text-align: center;
@@ -293,15 +267,12 @@ aside {
 }
 
 a {
-  color: #f6f6f6;
+  color: gold;
   text-decoration: none;
 }
-
+a:visited {
+  color: gold;
+}
 a:hover {
   color: #FFFFFF;
 }
-
-a:visited {
-  color: white;
-}
-
