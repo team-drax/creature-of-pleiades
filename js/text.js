@@ -96,7 +96,7 @@ nextButtonElem.addEventListener('click', handleNext);
 
 
 
-//---------------------------------------------Call Function
+//---------------------------------------------Call Functions
 function renderChapters() {
   let firstChapter = createAndPushChapter('Chapter 1', 'The Lab', 'url(../img/background/thelabbg.png)');
   chapterArray[0].addParagraph('You sit at your desk, working on your latest research in genetics.  Everyone else in the office has gone home at this point.  You check the clock and realize it is 11:00PM and you must have lost track of time!  While getting up to call it a night, you notice something odd out of the corner of your eye...  The gap under the door of your boss, Tamira\'s office is radiating a blue glow.  It is time to investigate...')
@@ -120,14 +120,14 @@ function renderChapters() {
   chapterArray[2].addParagraph(`You wake early and with a start!  The creature is lying at the foot of your bed watching you with it\'s beady gaze once again.  You look at your phone and Tamira has texted you. "${userInfo[0]}!! Were you at work late last night?!"`);
   chapterArray[2].addParagraph('Can you trust her?  Will she be upset that you stole her weird creature?  It did hop into your bag and seal it shut so it isn\'t really your fault.  Does she even know about the egg or did that egg appear in her office out of nowhere?  Maybe she has an explanation for all of this.');
   
-  let fourthChapter = createAndPushChapter('Chapter 4', 'On The Run', 'url(../img/paper.jpeg)');
+  let fourthChapter = createAndPushChapter('Chapter 4', 'The Strangers', 'url(../img/background/strangersbg.png)');
   chapterArray[3].addParagraph('Your phone vanishes out of your hand before you have time to make your decision. You look up at the creature and it has changed form again. All of this is so strange.  You can no longer contact anyone, and you decide you cannot go into work and face Tamira.');
   chapterArray[3].addParagraph('You pace around the house and try to take your mind of things.  click, click, click... the creature is on top of your laptop, clicking buttons and rolling across the keyboard.  Shooing it away, a local news site has been pulled up.  Headlines today are about unexpected meteor showers from everywhere around the globe, and about the government is mobilizing the national guard in all 50 states.');
   chapterArray[3].addParagraph('At that moment, there is a banging on your front door!  You sneak a look out the side kitchen window and see a mysterious unmarked black van and two men in suits..  You hide upstairs, and think about what you are going to do next.');
   chapterArray[3].addParagraph('The creature is growing agitated, and panicked.  It looks like it\'s motioning towards the window like you need to escape quickly.  How did you get caught up in this alien conspiracy?');
   chapterArray[3].addParagraph('You weigh your options.  You could answer the door and hand this creature over.  Presumably, that is why they are here banging on your door.  Alternatively, you could hop out the window with the creature, but you are on the second floor or you could try to sneak out the back door risking being seen.');
   
-  let fifthChapter = createAndPushChapter('Chapter 5', 'The Escape', 'url(../img/paper.jpeg)');
+  let fifthChapter = createAndPushChapter('Chapter 5', 'The Escape', 'url(../img/background/escapebg.png)');
   chapterArray[4].addParagraph('CRASH!  You don\'t have time to decide. The two men are yelling through the house.  They have smashed through the window and are rushing up to you.  \'WE KNOW WHAT YOU HAVE!\' they shout, and you can hear them rushing up the stairs.  You turn towards the creature and it has changed form once again.  Instinctively, you hop on its back and proceed out the window.');
   chapterArray[4].addParagraph('What are you doing?  This creature needs to be brought back to where it came from, but where is that exactly?  At the same time, you feel a bond growing between you and it.  It could have left without you... it has the ability to disappear! It must have chosen to wait for you.  Where are you two going though?  You can\'t go into hiding with a strange creature.');
   chapterArray[4].addParagraph('Up in the sky in the distance is a floating triangular black shape.  It definitely isn\'t a plane.  It is shiny and huge and moving slowly. Is this where the creature came from?  Why is he taking you in the opposite direction towards the woods?  Maybe he doesn\'t see the floating triangle.  You are at the edge of the wood now, and the creature has stopped.  You hop of its back and it turns back towards you.  You try asking it where it came from, you point out the triangle in the sky, you are just looking for any lead!  \"WHAT DO YOU WANT?\" you beg... The creature gazes at you, and your mind stops racing.  Miraculously, you find a sense of calm, and coming from within your head, you hear the word HOME.');
