@@ -87,6 +87,11 @@ main div {
   width: 100px;
 }
 
+#popUpSection {
+  margin: 0px;
+  z-index: 12;
+}
+
 
 #rightside{
   margin-right:100px;
@@ -167,7 +172,7 @@ article p {
   width: 90%;
   overflow-y: scroll;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 14pt;
+  font-size: 12pt;
   text-align: center;
 }
 
@@ -280,7 +285,8 @@ aside {
 }
 
 a {
-  color: #082b7d;
+  color: #ffffff;
+  text-decoration: none;
 }
 
 a:hover {
@@ -289,4 +295,9 @@ a:hover {
 
 a:visited {
   color: white;
+}
+
+#startGameForm {
+  z-index: 12;
+  display: block;
 }
