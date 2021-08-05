@@ -166,10 +166,14 @@ function handleStartButton(e){
 function handleStartChapterOne(e) {
   e.preventDefault();
   for (let i = 1; i < 4; i++){
-    userInfo.push(e.target[i].value);
+    let userData = e.target[i].value;
+    let userDataProper = userData.toUpperCase();
+    userInfo.push(userDataProper);
   }
   addUser();
   startGameForm.style.display = 'none';
+
+  renderChapters();
 
   chapterArray[currentChapterIndex].getNextPara();
   chapterArray[currentChapterIndex].pullChapterData();

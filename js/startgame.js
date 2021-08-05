@@ -7,7 +7,7 @@ let playScreen = document.getElementById('section2');
 let newGameButtonElem = document.getElementById('newGameButton');
 let loadGameButtonElem = document.getElementById('loadGame');
 let startGameIdArr = ['name', 'location', 'color'];
-let startGameTCArr = ['What\'s your name? ', 'Where are you located? ', 'What\'s your favorite color? '];
+let startGameTCArr = ['What\'s your name? ', 'What state are you from? ', 'What\'s your favorite color? '];
 let userInfo = [];
 
 //------------------------Global Functions----------------------------//
