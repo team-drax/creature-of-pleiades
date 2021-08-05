@@ -98,189 +98,69 @@ nextButtonElem.addEventListener('click', handleNext);
 
 //---------------------------------------------Call Function
 let firstChapter = createAndPushChapter('Chapter 1', 'The Lab', 'url(../img/background/thelabbg.png)');
-chapterArray[0].addParagraph('');
-chapterArray[0].addParagraph('');
-chapterArray[0].addParagraph('');
-chapterArray[0].addParagraph('');
-chapterArray[0].addParagraph('');
-chapterArray[0].addParagraph('');
-chapterArray[0].addParagraph('');
-chapterArray[0].addParagraph('');
+chapterArray[0].addParagraph('Opening Tamira\'s door, you see a box shaking around on her desk and it is the source of the blue light.  Should you really be in here, snooping around your bosses office?  After some hesitation, you decide you cant resist the urge to look.');
+chapterArray[0].addParagraph('As you approach the box, the glowing becomes brighter and brighter, and begins to make a buzzing sound.  You look inside and see an egg.  It isn\'t a normal egg... it is the size of a football and the source of the blue light.  It is vibrating wildly.  You touch the egg and the vibrating slows and the egg begins to hatch...');
+chapterArray[0].addParagraph('Watching the egg hatch, your heart begins to race.  What could possibly hatch out of a blue glowing egg?  You aren\'t sure if you want to know, but it is impossible to look away now.');
+chapterArray[0].addParagraph('The egg hatches and out comes a... creature.  It lacks features, and is mostly just a blob with a face.  It lunges out of the box and clings to the wall like one of those quarter machine sticky hand prizes.  It rolls down the wall, and starts walking its way towards you.');
+chapterArray[0].addParagraph('You have a choice... Do you try to scare it away?  You don\'t know what this strange creature can do... Maybe you should just leave the office and pretend like you never saw this creature or its egg... wipe your hands clean.  It does look a little cute though... ');
 
 let secondChapter = createAndPushChapter('Chapter 2', 'Home', 'url(../img/paper.jpeg)');
-chapterArray[1].addParagraph('');
-chapterArray[1].addParagraph('');
-chapterArray[1].addParagraph('');
-chapterArray[1].addParagraph('');
-chapterArray[1].addParagraph('');
-chapterArray[1].addParagraph('');
-chapterArray[1].addParagraph('');
-chapterArray[1].addParagraph('');
+chapterArray[1].addParagraph('Before you have time to do anything, the creature contorts its body like it\'s made of clay and vanishes from sight, and moments later reappears next to your shoulder bag.  You run to grab your bag but the creature hops inside and the zipper seals itself. ');
+chapterArray[1].addParagraph('You try to pry it out, but it has shut the zipper and locked your bag shut with some sort of magic.  You rip at the zipper but it will not budge.  With your bag in hand, you run out of the office and out the door of your building and head back home.');
+chapterArray[1].addParagraph('When you get home, you throw the bag on the kitchen floor.  The zipper slowly opens by itself and the creature flops out of your bag... but it\s body is much larger than the inside of your bag.  How is this possible?  It stares you straight in the eyes.  It begins to let out a banshee-like shriek, and lay on its side.  It is more annoying than threatening, but what does it need?');
+chapterArray[1].addParagraph('It occurs you... maybe it\'s hungry!  After all, it just hatched from an egg, and hasn\'t had a meal.  You definitely don\'t want it to get any bad ideas and think of you as food, so maybe it\'s best to offer it something.');
+chapterArray[1].addParagraph('What would be best for this creature? Maybe it needs protein... you open your fridge and you have a pack of hotdogs, and some leftover vegetarian stir fry.  Maybe it doesn\'t eat any of those things though... Your garbage can is overflowing... you could just let it go to town on your trash.');
 
-let thirdChapter = createAndPushChapter('Chapter 3', 'Coworker Confrontation', 'url(../img/background/thelabbg.png)');
-chapterArray[2].addParagraph('');
-chapterArray[2].addParagraph('');
-chapterArray[2].addParagraph('');
-chapterArray[2].addParagraph('');
-chapterArray[2].addParagraph('');
-chapterArray[2].addParagraph('');
-chapterArray[2].addParagraph('');
-chapterArray[2].addParagraph('');
+let thirdChapter = createAndPushChapter('Chapter 3', 'Home', 'url(../img/paper.jpeg)');
+chapterArray[2].addParagraph('Offering this creature food has instantaneously shut it up.  It swallows its meal whole and in the next breath it vanishes and appears as it did before int he lab.');
+chapterArray[2].addParagraph('There is a crash in your living room and you rush in to find the creature has shoved all the books off your bookshelf and squeezed its body into the top shelf.  It\'s skin looks different now, and it has fallen asleep.');
+chapterArray[2].addParagraph('What do you do with this creature?  Surely, you can\'t keep it forever.  What will Tamira say when she finds out you hatched her creature in her office?  What was she even doing with the egg and where did it come from?  So many questions are racing through your mind, but the creature doesn\'t seem to be doing anymore damage right now.  Maybe you should let it sleep and try to do the same.');
+chapterArray[2].addParagraph('You wake early and with a start!  The creature is lying at the foot of your bed watching you with it\'s beady gaze once again.  You look at your phone and Tamira has texted you.  She is asking you if you were at work late last night.');
+chapterArray[2].addParagraph('Can you trust her?  Will she be upset that you stole her weird creature?  It did hop into your bag and seal it shut so it isn\'t really your fault.  Does she even know about the egg or did that egg appear in her office out of nowhere?  Maybe she has an explanation for all of this.');
 
-let fourthChapter = createAndPushChapter('Chapter 4', 'The Villain Organization', 'url(../img/background/thelabbg.png)');
-chapterArray[3].addParagraph('');
-chapterArray[3].addParagraph('');
-chapterArray[3].addParagraph('');
-chapterArray[3].addParagraph('');
-chapterArray[3].addParagraph('');
-chapterArray[3].addParagraph('');
-chapterArray[3].addParagraph('');
-chapterArray[3].addParagraph('');
+let fourthChapter = createAndPushChapter('Chapter 4', 'Home', 'url(../img/paper.jpeg)');
+chapterArray[3].addParagraph('Your phone vanishes out of your hand before you have time to make your decision. You look up at the creature and it has changed form again. All of this is so strange.  You can no longer contact anyone, and you decide you cannot go into work and face Tamira.');
+chapterArray[3].addParagraph('You pace around the house and try to take your mind of things.  click, click, click... the creature is on top of your laptop, clicking buttons and rolling across the keyboard.  Shooing it away, a local news site has been pulled up.  Headlines today are about unexpected meteor showers from everywhere around the globe, and about the government is mobilizing the national guard in all 50 states.');
+chapterArray[3].addParagraph('At that moment, there is a banging on your front door!  You sneak a look out the side kitchen window and see a mysterious unmarked black van and two men in suits..  You hide upstairs, and think about what you are going to do next.');
+chapterArray[3].addParagraph('The creature is growing agitated, and panicked.  It looks like it\'s motioning towards the window like you need to escape quickly.  How did you get caught up in this alien conspiracy?');
+chapterArray[3].addParagraph('You weigh your options.  You could answer the door and hand this creature over.  Presumably, that is why they are here banging on your door.  Alternatively, you could hop out the window with the creature, but you are on the second floor or you could try to sneak out the back door risking being seen.');
 
-let fifthChapter = createAndPushChapter('Chapter 5', 'Bringing the Creature Home', 'url(../img/background/thelabbg.png)');
-chapterArray[4].addParagraph('');
-chapterArray[4].addParagraph('');
-chapterArray[4].addParagraph('');
-chapterArray[4].addParagraph('');
-chapterArray[4].addParagraph('');
-chapterArray[4].addParagraph('');
-chapterArray[4].addParagraph('');
-chapterArray[4].addParagraph('');
+let fifthChapter = createAndPushChapter('Chapter 5', 'The Escape', 'url(../img/paper.jpeg)');
+chapterArray[4].addParagraph('CRASH!  You don\'t have time to decide. The two men are yelling through the house.  They have smashed through the window and are rushing up to you.  \'WE KNOW WHAT YOU HAVE!\' they shout, and you can hear them rushing up the stairs.  You turn towards the creature and it has changed form once again.  Instinctively, you hop on its back and proceed out the window.');
+chapterArray[4].addParagraph('What are you doing?  This creature needs to be brought back to where it came from, but where is that exactly?  At the same time, you feel a bond growing between you and it.  It could have left without you... it has the ability to disappear! It must have chosen to wait for you.  Where are you two going though?  You can\'t go into hiding with a strange creature.');
+chapterArray[4].addParagraph('Up in the sky in the distance is a floating triangular black shape.  It definitely isn\'t a plane.  It is shiny and huge and moving slowly. Is this where the creature came from?  Why is he taking you in the opposite direction towards the woods?  Maybe he doesn\'t see the floating triangle.  You are at the edge of the wood now, and the creature has stopped.  You hop of its back and it turns back towards you.  You try asking it where it came from, you point out the triangle in the sky, you are just looking for any lead!  \"WHAT DO YOU WANT?\" you beg... The creature gazes at you, and your mind stops racing.  Miraculously, you find a sense of calm, and coming from within your head, you hear the word HOME.');
+chapterArray[4].addParagraph('It talked to you.  Maybe not talked, but communicated telepathically.  \"You want to go home?\" you ask.  The creature nods.  \"Where is that?  Please, just tell me.  I can take you there.\"  No response.');
+chapterArray[4].addParagraph('Where do you take the creature?  You could bring it back to the lab with your boss who may have more information.  You could bring it to the black triangle in the sky since it is your only strong lead on where home could be for this creature.  You have a strong gut feeling about going into the forest where you can safely hide, but why would the creature stop at the forest edge instead of going straight in?');
 
-let resoulutionChapterWorst = createAndPushChapter('The End 1', 'Worst');
-chapterArray[5].addParagraph('');
-chapterArray[5].addParagraph('');
-chapterArray[5].addParagraph('');
+let resoulutionChapterWorst = createAndPushChapter('The End', 'Oh No!', 'url(../img/paper.jpeg)');
+chapterArray[5].addParagraph('You have gone down this insane path to bring the creature back home.  Your adventure has brought you here, but then you notice just how still the night is...  It is dark, and there are no more leads.  A moment of panic hits you, as your realize you may have made the wrong choice... Why are you here?  Just then, the ground begins to shake and your creature starts pulsating with an otherworldly glow.');
+chapterArray[5].addParagraph('The creature starts writhing and twitching and you back away...its eyes go bloodshot red and start bulging from its head.  It starts making an awful sound... a high pitched screeching and it beings foaming at the mouth.  In the distance, the sky becomes littered with black triangle spaceships and realization hits you.  The invasion has begun... The spaceships have lazers and are burning everything in sight.  Do you run?  Do you hide?  There is no escape for you or the rest of humanity.  ');
+chapterArray[5].addParagraph('The creature gives you a dark look... It grows tentacle after tentacle... and with no time to react it lunges forward and pins you to the ground.  It wraps your body with its tentacled body and winds its wet tongue around your head.  You are devoured whole and the world goes black....');
+chapterArray[5].addParagraph('THE WORLD HAS BEEN DESTROYED AND YOU LOSE EVERYTHING!!!')
 
-let resolutionChapterNegative = createAndPushChapter('The End 2', 'Bad');
-chapterArray[6].addParagraph('');
-chapterArray[6].addParagraph('');
-chapterArray[6].addParagraph('');
+let resolutionChapterNegative = createAndPushChapter('The End', 'It was a mistake...', 'url(../img/paper.jpeg)');
+chapterArray[6].addParagraph('You have gone down this insane path to bring the creature back home.  Your adventure has brought you here, but then you notice just how still the night is...  It is dark, and you have no more leads.  A moment of panic hits you, as your realize you may have made the wrong choice... Why are you here?  Just then, the ground begins to shake and your creature starts pulsating with an otherworldly glow.');
+chapterArray[6].addParagraph('The creature starts writhing and twitching and you back away...its eyes go bloodshot red and start bulging from its head.  It starts making an awful sound... a high pitched screeching and it beings foaming at the mouth.  It gives you a dark look.. and with no time to react it lunges forward and pins you to the ground.  You cannot escape... it devours you whole and the world goes black....');
+chapterArray[6].addParagraph('YOU LOSE');
 
-let resolutionChapterNeutral = createAndPushChapter('The End 3', 'Neutral');
-chapterArray[7].addParagraph('');
-chapterArray[7].addParagraph('');
-chapterArray[7].addParagraph('');
-
-let resolutionChapterPositive = createAndPushChapter('The End 4', 'Good');
-chapterArray[8].addParagraph('');
-chapterArray[8].addParagraph('');
-chapterArray[8].addParagraph('');
-
-let resolutionChapterBest = createAndPushChapter('The End 5', 'Best');
-chapterArray[9].addParagraph('');
-chapterArray[9].addParagraph('');
-chapterArray[9].addParagraph('');
-//creates and pushes the 5 chapters into the chapter array
+let resolutionChapterNeutral = createAndPushChapter('The End', 'Was it all real?', 'url(../img/paper.jpeg)');
+chapterArray[7].addParagraph('You have done everything you think you can to protect this creature.  You have gone down this insane path to bring the creature back home.  You notice just how still the night is...  It is dark.  A moment of panic hits you, as your realize you may have made the wrong choice... Why are you here?');
+chapterArray[7].addParagraph('There is a FLASH and a CRACK and you are back home waking with start!  You had a crazy dream of evolving creatures and some otherworldly conspiracy but all of the details are hazy now.  In your living room all your books are on the floor and the top shelf of the bookcase is empty.  This seems familiar... but you can\'t quite remember why.  You pick up the books and continue about your day');
+chapterArray[7].addParagraph('THE END');
 
 
-// chapterArray[0].addParagraph('You’re entering in a restricted area. Find the Glowing EGG');
-// chapterArray[0].addParagraph('As the user picks the egg, the egg will vibrate as a result setting the alarm off. Then the egg will hatch, and the creature will pop out.');
-// chapterArray[0].addParagraph(' How do you want to proceed?');
-// chapterArray[0].addParagraph('Scare the creature and go home.');
-// chapterArray[0].addParagraph('Take the creature home with you.');
-// chapterArray[0].addParagraph('Leave the creature in the lap while you go home.');
-// chapterArray[1].addParagraph(`Upon finding the creature at work, the user has returned home from work, with
-// the creature in hand, or finds it there after 7 seconds`);
-// chapterArray[1].addParagraph(`User gets home from work, nervous and confused as to what to do with the
-// creature.`);
-// chapterArray[1].addParagraph('User decides, rationally, that feeding the creature is step #1');
-// chapterArray[1].addParagraph(`User is directed to click on the food option of choice that they want to feed the
-// creature. Meat, garbage, vegetables. User clicks the option they want and the
-// first transformation of the creature begins.`);
-// chapterArray[1].addParagraph(`“Wow! What a day! Not only was I late for work again, I discovered this
-// creature that’s as ugly as the Chupacabra!” | “Surely someone saw me
-// take it from the lab, but I feel bad that this... thing was growing in our lab
-// without my knowledge. What is it? A government experiment? An
-// experiment by my lab-mate?`);
-// chapterArray[1].addParagraph(`“Why did I do this? Maybe I should let it go? No! I live in a neighborhood
-// with kids and elderly folk. Should I stuff it in the dumpster? Maybe..”
-// ○ “Who am I kidding? This thing, whatever it is, is a living lifeform of
-// unexplained origin. I think I’ll try to keep it alive and maybe uncover what’s
-// going on here.”`);
-// chapterArray[1].addParagraph(`“What would I want if I was found in a strange place? Food!” | Let’s see
-// what I’ve got for this thing. Meat? I mean it is a baby. Garbage? I mean,
-// why not? But it’s a baby.. Vegetables? The foundation of health..but it’s a
-// baby..”`);
-// chapterArray[2].addParagraph(`“Good, I’m glad it’s got some food in it. | You know what? Instead of
-// seeing it, as an object, why don’t I assign a name to this little thing :) I’m
-// going to name it...”`);
-// chapterArray[2].addParagraph(`what are we going to do about you?
-// “I wonder, should I alert anyone of the knowledge of this creature's
-// existence? Well, on one hand, I did technically steal it from the lab. So, that may not go over well.” `);
-// chapterArray[2].addParagraph(`“But, I don’t think I could keep this a secret for too long nor can I see myself actually nurturing'`);
-// chapterArray[2].addParagraph(`“I can do it. It’s my responsibility now to care for (creatureName) and
-// ultimately make a decision.`);
-// chapterArray[2].addParagraph(`The user receives a notification on their tablet/phone from a co-worker
-// asking “where is the egg?`);
-// chapterArray[4].addParagraph(`“Hey buddy!! there was an egg in a crate in our lab, did you
-// happen to see what happened to it? Let me know.”  Tell the truth or Lie`);
-// chapterArray[2].addParagraph(`User is scared and does not know whether their co-worker is genuinely
-// interested or against them.`);
-// chapterArray[2].addParagraph('User is given the option to tell the truth, ignore the notification or lie.');
-// chapterArray[3].addParagraph(`Regardless of user decision, there is a shift in the universe as unexpected
-// meteor showers arise that appear to be linked to this creature’s existence/escape.`);
-// chapterArray[5].addParagraph(`“Wow! What a day! Not only was I late for work again, I saw this, this,
-// creature that’s as ugly as the Chupacabra!” || “I wonder what that thing
-// was? “And how did I not notice this... thing, was growing in our lab without
-// my knowledge? Is it a government experiment? An experiment by my
-// lab-mate`);
-// chapterArray[5].addParagraph('creature enters the house and scares the user');
-// chapterArray[5].addParagraph('“What the!? How? How did, this, thing follow me home!? Aye Dios Mio!”');
-// chapterArray[5].addParagraph(`“This thing, whatever it is, is a living lifeform of unexplained origin. It
-// doesn’t look that scary, so I think I’ll try to keep it alive and maybe uncover what’s going on here.”`);
-// chapterArray[5].addParagraph(`“Good, I’m glad it’s got some food in it. | You know what? Instead of
-// seeing it, as an object, why don’t I assign a name to this little thing :) I’m
-// going to name it...”`);
-// chapterArray[5].addParagraph('what are we going to do about you?');
-// chapterArray[5].addParagraph(`'“I wonder, should I alert anyone of the knowledge of (creatureName)’s
-// existence? I mean, I decided I didn’t want anything to do with it. But look
-// at it, it’s so...cute! He even has little hairs.”`);
-// chapterArray[5].addParagraph(`It’s my responsibility now to care for (creatureName) and
-// ultimately make a decision.`);
-// chapterArray[5].addParagraph('notification on phone/tablet/laptop');
-// chapterArray[5].addParagraph(`“Hey!!, there was an egg in a crate in our lab, did you
-// happen to see what happened to it? Let me know.”`);
-// chapterArray[5].addParagraph('Tell the truth or Lie');
-// chapterArray[5].addParagraph(`“Hey Ralph, I noticed that the crate was cracked open and when I
-// opened it up, the egg cracked open and a creature popped out! I
-// decided that it would be best to bring it home.”`);
-// chapterArray[5].addParagraph('“Ralph, I am not sure what you’re talking about, sorry.”');
-// chapterArray[5].addParagraph(`Regardless of user decision, there is a shift in the universe as unexpected
-// meteor showers arise that appear to be linked to this creature’s
-// existence/escape.`);
-// chapterArray[5].addParagraph(`meteor showers, screen shakes? Animation that
-// shows meteors flying across screen or lines glowing'`);
-// chapterArray[6].addParagraph('Leading into the Army Response/government response');
-// chapterArray[6].addParagraph(`You've seen the news, the meteor showers. The local news is calling it a potential extinction event, but no one really knows. The news continues to report that the government is mobilizing the national guard in all 50 states.`);
-// chapterArray[6].addParagraph('You approach the door and open it to find two men in suits. You quickly assertain that they are government employees. They know you were at **insert lab name** and ask about your whereabouts last night and your actions. They inform you that some security protocols were violated and they are tracking it down. They are quite vague. ***I think we could insert a choice here and I think one of them should be to lie, but if you do, then maybe the two men present your badge and call you out for lying');
-// chapterArray[6].addParagraph('You come up with an explanation, but there is banging behind you in the house');
-// chapterArray[6].addParagraph('The two men ask what that is and you make up something*** we can talk about this');
-// chapterArray[6].addParagraph(`The two men hand you a business card and tell you to call them with any information that you think of. You ask for some credentials as they turn away and they act as though they didn't hear you and keep walking.`);
-// chapterArray[6].addParagraph('Moments later you get a text from a friend from work. They ask where you are and if you can meet up.');
-// chapterArray[6].addParagraph(`You say you cannot and they respond quickly that it is urgent ***maybe we have like a cell phone/text message overlay/image showing the conversation`);
-// chapterArray[6].addParagraph(`You see a flash of bright light outside the window and go outside to see. A massive meteor is heading this way.  the creature is going crazy in the house. Banging in the basement continues. You go down to find the creature *evolving*? Screaming? ** the meteors are the creature's "people" and it is causing him to call out/go crazy** give the user a choice here?*** hide upstairs, open the basement door access to outside, try to calm the creature`);
-// chapterArray[6].addParagraph('The creature gets out.');
-// chapterArray[6].addParagraph('As you watch/chase(depending on choices) the creature outside, you are in awe of a giant ship. The ship sits over the town and waits. The creature moves in the direction of the ship.');
-// chapterArray[6].addParagraph('beginning of chapter 3 part 2');
-// chapterArray[6].addParagraph('beginning of chapter 3 part 2');
-// chapterArray[6].addParagraph('beginning of chapter 3 part 3');
-// chapterArray[6].addParagraph('beginning of chapter 3 part 3');
-// chapterArray[9].addParagraph(`Trusting (monster name's) insticts you head away from the spaceship.  You aren't sure why, but the creature doesn't seem to want to go to the spaceship, and taking it back to the lab means potentially putting it in harms way.  The (villain agency) has some agenda with this creature, and they would most certainly be able to track it back to the lab.`);
-// chapterArray[9].addParagraph(`As you get closer and closer to the forest the monster begins growing once again.  He starts developing limbs.  You aren't sure this is the right choice, but the connection with your strangely developing friend pushes you further forward.  You have arrived at your destination, and there is nothing here... It is late now.  You commited to coming to this spot, trusting the creature, but you stand in the dark  with no more leads and the (villain agency) could be arriving any moment on your trail.  You are standing at forest clearing) and nothing seems to be happening.`);
-// chapterArray[9].addParagraph(`All of a sudden, the trees start pulsating with a glowing aura... and through the darkness, appearing from seemingly nowhere an entire group of creatures identical to your friend, but much, much larger!  Maybe the creature wasn't an alien creature, but actually from earth all along, hidden in the forest.  Just then, (creature name) begins radiating with this same glow and develops his last limbs.`);
-// chapterArray[9].addParagraph('The adults approach you slowly and gently.  They stare at you with intense contemplation, almost as if they are reading your mind.  All of your recent events with your creature start flashing through your mind like a movie in fast forward,  and you know they are learning of your journey through some sort of telepathy.  ');
-// chapterArray[9].addParagraph(`Then, the eldest of the group of creatures starts speaking to you through your mind.  It thanks you for protecting the creature and says it is time for them to take leave with your friend but before leaving, they want to give you a gift!  The elder reaches out a hand, and in it is a simple acorn.  When you touch the acorn, a huge WHOOSH of leaves and wind raise you into the air and then you lower to the ground.`);
-// chapterArray[9].addParagraph('You have been given the power of the creatures - the power to appear and dissapear at will.  This must be how they can live in the forest without being seen.  (creature name) runs over and nuzzles against you, and after one last understood glance, it runs towards its family.  They thank you one last time, and vanish into the trees.');
-// chapterArray[10].addParagraph('You have done everything you think you can to protect this creature.  You have gone down this insane path to bring the creature back home.  Your adventure has brought you here, but then you notice just how still the night is...  It is dark, and there are no more leads.');
-// chapterArray[10].addParagraph('A moment of panic hits you, as your realize you may have made the wrong choice... Why are you here? ');
-// chapterArray[10].addParagraph('Just then, the ground begins to shake and your creature starts pulsating with an otherworldly glow.  There is a FLASH and a CRACK and you are all of a sudden standing inside of a foreign looking vessel of some kind.  The walls are lined with glowing veins resembling the glow from your creature.  Are you inside the spaceship?  How did you get here?  ');
-// chapterArray[10].addParagraph('Appearing out of nowhere, a creature resembling yours but much much larger approaches you and stares at you intensely.  The memories of your adventure with (creature name) flash through your mind like a movie in fast forward.  (creature name) looks at you, and with a last understanding glance, heads toward his family.  The elder thanks you for protecting one of his kind.  Then another FLASH and CRACK you are back at home, and all is calm.  ');
-// chapterArray[11].addParagraph('You have done everything you think you can to protect this creature.  You have gone down this insane path to bring the creature back home.  Your adventure has brought you here, but then you notice just how still the night is...  It is dark, and there are no more leads.  A moment of panic hits you, as your realize you may have made the wrong choice... Why are you here?  Just then, the ground begins to shake and your creature starts pulsating with an otherworldly glow.');
-// chapterArray[11].addParagraph(`There is a FLASH and a CRACK and you are back home waking with start!  You had a crazy dream of evolving creatures and some otherworldly conspiracy but all of the details are hazy now.  You head to the kitchen to make yourself breakfast, and on the floor are scraps of (meat, veggies or garbage).  This seems familiar... but you can't quite remember why.`);
-// chapterArray[12].addParagraph('You have gone down this insane path to bring the creature back home.  Your adventure has brought you here, but then you notice just how still the night is...  It is dark, and there are no more leads.  A moment of panic hits you, as your realize you may have made the wrong choice... Why are you here?  Just then, the ground begins to shake and your creature starts pulsating with an otherworldly glow.');
-// chapterArray[12].addParagraph('(creature name) starts writhing and twitching and you back away...its eyes go bloodshot red and start bulging from its head.  It starts making an awful sound... a high pitched screeching and it beings foaming at the mouth.  It gives you a dark look.. and with no time to react it lunges forward and pins you to the ground.  You cannot escape... it devours you whole and the world goes black....');
-// chapterArray[12].addParagraph('You have gone down this insane path to bring the creature back home.  Your adventure has brought you here, but then you notice just how still the night is...  It is dark, and there are no more leads.  A moment of panic hits you, as your realize you may have made the wrong choice... Why are you here?  Just then, the ground begins to shake and your creature starts pulsating with an otherworldly glow.');
-// chapterArray[12].addParagraph('(creature name) starts writhing and twitching and you back away...its eyes go bloodshot red and start bulging from its head.  It starts making an awful sound... a high pitched screeching and it beings foaming at the mouth.  In the distance, the sky becomes littered with spaceships and realization hits you.  The invasion has begun... The spaceships have lazers and are burning everything in sight.  Do you run?  Do you hide?  There is no escape for you or the rest of humanity.  ');
-// chapterArray[12].addParagraph('The creature gives you a dark look... It grows tentacle after tentacle... and with no time to react it lunges forward and pins you to the ground.  It wraps your body with its tentacled body and winds its wet tongue around your head.  You are devoured whole and the world goes black....');
-// chapterArray[12].addParagraph('beginning of chapter 1 part 3');
+let resolutionChapterPositive = createAndPushChapter('The End', 'Bringing the creature home', 'url(../img/paper.jpeg)');
+chapterArray[8].addParagraph('You have done everything you think you can to protect this creature.  You have gone down this insane path to bring the creature back home.  You notice just how still the night is...  It is dark.  A moment of panic hits you, as your realize you may have made the wrong choice... Why are you here?');
+chapterArray[8].addParagraph('Just then, the ground begins to shake and your creature starts pulsating with an otherworldly glow.  There is a FLASH and a CRACK and all of a sudden you are inside of a foreign looking vessel of some kind.  The walls are lined with glowing veins resembling the glow from your creature.  Are you inside the black triangle spaceship?  How did you get here?');
+chapterArray[8].addParagraph('Appearing out of nowhere, a creature resembling yours but much much larger approaches you and stares at you intensely.  The memories of your adventure with the creature flash through your mind like a movie in fast forward.  It looks at you, and with a last understanding glance, heads toward his family.  The elder thanks you for protecting one of his kind.  Then another FLASH and CRACK you are back at home, and all is calm.. no broken window, no black van, no triangle in the sky.  You don\'t even have the message from your boss.');
+chapterArray[8].addParagraph('CONGRATULATIONS!  YOU WIN!')
+
+let resolutionChapterBest = createAndPushChapter('The End', 'Into the forest', 'url(../img/paper.jpeg)');
+chapterArray[9].addParagraph('Trusting yours and the monster\'s insticts, you head away from the spaceship and into the forest.  You aren\'t sure why, but the creature doesn\'t seem to want to go to the spaceship, and taking it back to the lab means potentially putting it in harms way.  The agents in the black van have some agenda with this creature, and they would most certainly be able to track it back to the lab.');
+chapterArray[9].addParagraph('You push deper and deeper into the forest. You aren\'t sure this is the right choice, but the connection with your strangely developing friend pushes you further forward.  You have arrived at your destination, and there is nothing here... It is late now.  You commited to coming to this spot, trusting the creature and yourself, but you stand in the dark  with no more leads and the men in the suits could be arriving any moment on your trail.  You are standing at forest clearing) and nothing seems to be happening.');
+chapterArray[9].addParagraph('All of a sudden, the trees start pulsating with a glowing aura... and through the darkness, appearing from nowhere an entire group of creatures identical to your friend, but much, much larger!  Maybe the creature wasn\'t an alien creature, but actually from earth all along, hidden in the forest.  Just then, the creature begins radiating with this same glow and develops his last limbs.');
+chapterArray[9].addParagraph('The adults approach you slowly and gently.  They stare at you with intense contemplation, almost as if they are reading your mind.  All of your recent events with your creature start flashing through your mind like a movie in fast forward,  and you know they are learning of your journey through some sort of telepathy.  Then, the eldest of the group of creatures starts speaking to you through your mind.  It thanks you for protecting the creature and says it is time for them to take leave with your friend but before leaving, they want to give you a gift!');
+chapterArray[9].addParagraph('The elder reaches out a hand, and in it is a simple acorn.  When you touch the acorn, a huge WHOOSH of leaves and wind raise you into the air and then you lower to the ground.  You have been given the power of the creatures - the power to appear and dissapear at will.  This must be how they can live in the forest without being seen.  Your creature friend runs over and nuzzles against you, and after one last understood glance, it runs towards its family.  They thank you one last time, and vanish into the trees.');
+chapterArray[9].addParagraph('When you leave the forest, the black triangle is gone.  You head back home, knowing if there is any trouble you can disappear anyway.  When you get home, you are shocked to find there is no black van, the window isn\'t smashed in, and everything is calm and fine.  Your phone is sitting on your bed, and you don\'t even have any messages from Tamira.  You sigh and lay down and fall asleep..');
+chapterArray[9].addParagraph('CONGRATULATIONS!  YOU HAVE MADE GREAT DECISIONS AND RETURNED YOUR CREATURE SAFELY TO ITS HOME!  YOU WIN!');
+console.log(chapterArray);
