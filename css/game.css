@@ -87,6 +87,11 @@ main div {
   width: 100px;
 }
 
+#popUpSection {
+  margin: 0px;
+  z-index: 12;
+}
+
 
 #rightside{
   margin-right:100px;
@@ -290,4 +295,9 @@ a:hover {
 
 a:visited {
   color: white;
+}
+
+#startGameForm {
+  z-index: 12;
+  display: block;
 }
