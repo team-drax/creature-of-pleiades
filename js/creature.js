@@ -22,7 +22,6 @@ let formArray = [formOneElem, formTwoElem, formThreeElem, formFourElem, formFive
 //an array for the references to the form elements for each of the 5 evolution forms.
 let myCreature = new Creature();
 // creates a creature named Randy and sets it to variable myCreature
-console.log(myCreature);
 
 
 
@@ -137,7 +136,7 @@ function handleSubmitOne(e) {
       myCreature.addFirstTrait(checkedValue);
       myCreature.renderCreature();
       myCreature.changeCreatureScore(checkedValue);
-      currentChapterIndex++;
+      currentChapterIndex++
       chapterArray[currentChapterIndex].getNextPara();
       nextButtonElem.style.display = 'block';
       formOneElem.style.display = 'none';
@@ -208,7 +207,6 @@ function handleSubmitFive(e) {
         formFiveElem.style.display = 'none';
         chapterArray[currentChapterIndex].pullChapterData();
         myCreature.traitSix = evoSix[0];
-        console.log(myCreature);
         myCreature.renderCreature();
       } else if (myCreature.getFinalScore() > -5 && myCreature.getFinalScore() < -1) {
         currentChapterIndex += 2;
