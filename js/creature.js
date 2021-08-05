@@ -7,6 +7,8 @@ const evoThree = ['../img/creatureparts/3-TRUTH.png', '../img/creatureparts/3-IG
 const evoFour = ['../img/creatureparts/4-UPSTAIRS.png', '../img/creatureparts/4-BACKDOOR.png', '../img/creatureparts/4-OPEN.png'];
 const evoFive = ['../img/creatureparts/5-INSTINCTS.png', '../img/creatureparts/5-LAB.png', '../img/creatureparts/5-SPACESHIP.png'];
 const evoSix = ['../img/creatureparts/6-FINALBAD.png', '../img/creatureparts/6-FINALGOOD.png'];
+let startGameDiv = document.getElementById('startGameDiv');
+let startGameForm = document.createElement('form');
 //Variables for the different evolution images
 const creatureDivElem = document.getElementById('creature');
 //variable for the location of the creature div
@@ -123,9 +125,56 @@ Creature.prototype.getFinalScore = function () {
 
 /* --------------------------------------------------------------------------------HANDLER FUNCTIONS */
 function handleStartButton(e){
+  console.log(e);
+  //Create div to pop up after Start New Game button is clicked and gives ID for CSS styling the z-index and centering//
+  
+  startGameDiv.id = 'startGameDiv';
+  startGameDiv.display = 'block';
+  //Creates form for user input on name, gender, favorite color//
+  startGameForm.id = "startGameForm";
+  startGameDiv.appendChild(startGameForm);
+  let fieldsetElem = document.createElement('fieldset');
+  fieldsetElem.id = "fieldsetElem";
+  startGameForm.appendChild(fieldsetElem);
+  let legendElem = document.createElement('legend');
+  legendElem.textContent = 'Let\'s Get to Know You!';
+  fieldsetElem.appendChild(legendElem); 
+  for (let i = 0; i < startGameIdArr.length; i++){
+    let labelElem = document.createElement('label');
+    labelElem.classList.add("startGameLabel");
+    labelElem.textContent = startGameTCArr[i];
+    fieldsetElem.appendChild(labelElem);
+    let inputElem = document.createElement('input');
+    inputElem.type = 'text';
+    inputElem.classList.add("startGameInput");
+    inputElem.id = startGameIdArr[i];
+    labelElem.appendChild(inputElem);
+  }
+  //Creates button to submit user responses and renders Chapter One text/story//
+  let startChapterOneButton = document.createElement('button');
+  startChapterOneButton.type = 'submit';
+  startChapterOneButton.textContent = 'Continue';
+  startGameForm.appendChild(startChapterOneButton);
+  startGameDiv.addEventListener('submit', handleStartChapterOne);
+
+
+  // chapterArray[currentChapterIndex].getNextPara();
+  // chapterArray[currentChapterIndex].pullChapterData();
+  // nextButtonElem.style.display = 'block';
+}
+
+function handleStartChapterOne(e) {
+  e.preventDefault();
+  for (let i = 1; i < 4; i++){
+    userInfo.push(e.target[i].value);
+  }
+  addUser();
+  startGameForm.style.display = 'none';
+
   chapterArray[currentChapterIndex].getNextPara();
   chapterArray[currentChapterIndex].pullChapterData();
   nextButtonElem.style.display = 'block';
+  startButtonElem.removeEventListener('click', handleStartButton);
 }
 
 function handleSubmitOne(e) {
