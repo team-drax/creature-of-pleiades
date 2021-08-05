@@ -167,6 +167,7 @@ main {
   width: auto;
   justify-content: center;
   line-height: 1.3;
+  text-align: center;
 }
 #bioImg {
   width: 90%;
