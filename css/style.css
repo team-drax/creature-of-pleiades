@@ -95,7 +95,7 @@ main {
   /* background-color: rgb(80, 15, 80); */
 }
 
-#newGameButton, #loadGame, #lore, #aboutUs {
+#playGameButton, #loadGame, #lore, #aboutUs{
   /* margin-bottom: 50px; */
   height: 50px;
   border-radius: 20px;
@@ -129,7 +129,7 @@ main {
   text-decoration: none;
 } */
 
-#newGameButton:hover, #loadGame:hover, #lore:hover, #aboutUs:hover{
+#playGameButton:hover, #loadGame:hover, #lore:hover, #aboutUs:hover{
 	text-decoration: none;
 	color: gold;
   -webkit-transform: scale(1.1) rotate(4deg);
