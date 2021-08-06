@@ -9,6 +9,8 @@ const evoFive = ['../img/creatureparts/5-INSTINCTS.png', '../img/creatureparts/5
 const evoSix = ['../img/creatureparts/6-FINALBAD.png', '../img/creatureparts/6-FINALGOOD.png'];
 let startGameDiv = document.getElementById('startGameDiv');
 let startGameForm = document.createElement('form');
+let headElem = document.getElementById('headElem');
+let footElem = document.getElementById('footElem');
 //Variables for the different evolution images
 const creatureDivElem = document.getElementById('creature');
 //variable for the location of the creature div
@@ -166,12 +168,18 @@ function handleStartButton(e){
 
 function handleStartChapterOne(e) {
   e.preventDefault();
-  for (let i = 1; i < 4; i++){
-    let userData = e.target[i].value;
-    let userDataProper = userData.toUpperCase();
-    userInfo.push(userDataProper);
-  }
+  
+    let userData = e.target[1].value;
+    userInfo.push(userData);
+    let user2Data = e.target[2].value;
+    userInfo.push(user2Data);
+    let user3Data = e.target[3].value;
+    userInfo.push(user3Data);
+    
+  console.log(userInfo);
   addUser();
+  headElem.style.backgroundImage = `linear-gradient(${userInfo[2]}, white)`;
+  footElem.style.backgroundImage = `linear-gradient(white, ${userInfo[2]})`;
   startGameForm.style.display = 'none';
 
   renderChapters();
