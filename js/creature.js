@@ -27,6 +27,7 @@ let formArray = [formOneElem, formTwoElem, formThreeElem, formFourElem, formFive
 //an array for the references to the form elements for each of the 5 evolution forms.
 let myCreature = new Creature();
 // creates a creature named Randy and sets it to variable myCreature
+let creatureNameElem = document.getElementById('namecreature');
 
 
 
@@ -132,6 +133,13 @@ function saveChapterIndex(){
 
 
 /* --------------------------------------------------------------------------------HANDLER FUNCTIONS */
+function handleCreatureName(e){
+  let myCreatureName = prompt('What would you like to name your creature?');
+  myCreature.creatureName = myCreatureName;
+  creatureNameElem.textContent = myCreature.creatureName;
+  creatureNameElem.removeEventListener('click', handleCreatureName);
+}
+
 function handleStartButton(e){
   console.log(e);
   //Create div to pop up after Start New Game button is clicked and gives ID for CSS styling the z-index and centering//
@@ -187,6 +195,7 @@ function handleStartChapterOne(e) {
   headElem.style.backgroundImage = `linear-gradient(${userInfo[2]}, white)`;
   footElem.style.backgroundImage = `linear-gradient(white, ${userInfo[2]})`;
   startGameForm.style.display = 'none';
+  creatureNameElem.style.color = userInfo[2];
 
   renderChapters();
 
@@ -330,6 +339,7 @@ formThreeElem.addEventListener('submit', handleSubmitThree);
 formFourElem.addEventListener('submit', handleSubmitFour);
 formFiveElem.addEventListener('submit', handleSubmitFive);
 //event listener for the submit on the first form
+creatureNameElem.addEventListener('click', handleCreatureName);
 
 
 

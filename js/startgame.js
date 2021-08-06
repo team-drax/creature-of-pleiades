@@ -70,12 +70,16 @@ function handleLoadGame(e){
   myCreature.traitFour = parsedCreature.traitFour;
   myCreature.traitFive = parsedCreature.traitFive;
   myCreature.traitSix = parsedCreature.traitSix;
+  myCreature.creatureName = parsedCreature.creatureName;  
+  creatureNameElem.textContent = myCreature.creatureName;
+  creatureNameElem.removeEventListener('click', handleCreatureName);
   if(storedUser){
     let parsedUser = JSON.parse(storedUser);
     userInfo.push(parsedUser.name);
     userInfo.push(parsedUser.location);
     userInfo.push(parsedUser.color);
     currentUser = new User(parsedUser.name, parsedUser.location, parsedUser.color);
+    creatureNameElem.style.color = parsedUser.color;
   } else {
     alert('Sorry, there are currently no saved users.');
   }
