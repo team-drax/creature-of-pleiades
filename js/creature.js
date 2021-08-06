@@ -121,7 +121,12 @@ Creature.prototype.getFinalScore = function () {
 
 
 /* --------------------------------------------------------------------------------GLOBAL FUNCTIONS */
-
+function saveChapterIndex(){
+  let savedChapterIndex = JSON.stringify(currentChapterIndex);
+  localStorage.setItem('savedChapterIndex', savedChapterIndex);
+  let savedCreature = JSON.stringify(myCreature);
+  localStorage.setItem('savedCreature', savedCreature);
+}
 
 
 
@@ -211,6 +216,7 @@ function handleSubmitOne(e) {
       chapterArray[currentChapterIndex].pullChapterData();
     }
   }
+  saveChapterIndex();
 }
 function handleSubmitTwo(e) {
   e.preventDefault();
@@ -227,6 +233,7 @@ function handleSubmitTwo(e) {
       chapterArray[currentChapterIndex].pullChapterData();
     }
   }
+  saveChapterIndex();
 }
 function handleSubmitThree(e) {
   e.preventDefault();
@@ -243,6 +250,7 @@ function handleSubmitThree(e) {
       chapterArray[currentChapterIndex].pullChapterData();
     }
   }
+  saveChapterIndex();
 }
 function handleSubmitFour(e) {
   e.preventDefault();
@@ -259,6 +267,7 @@ function handleSubmitFour(e) {
       chapterArray[currentChapterIndex].pullChapterData();
     }
   }
+  saveChapterIndex();
 }
 function handleSubmitFive(e) {
   e.preventDefault();
@@ -305,6 +314,7 @@ function handleSubmitFive(e) {
       }
     }
   }
+  saveChapterIndex();
 }
 //Listen for submit on radio button forms.  then cycles through the index of the possible targets (the three options) and checks for truthyness on their checked trait.  Whichever one is true, will pass the index on to the addNthTrait method and then render the creature.
 

@@ -5,7 +5,7 @@
 //------------------------Global Variables----------------------------//
 let playScreen = document.getElementById('section2');
 let newGameButtonElem = document.getElementById('newGameButton');
-let loadGameButtonElem = document.getElementById('loadGame');
+let loadGameButtonElem = document.getElementById('loadgame');
 let startGameIdArr = ['name', 'location', 'color'];
 let startGameTCArr = ['What\'s your name? ', 'What state are you from? ', 'What\'s your favorite color? '];
 let userInfo = [];
@@ -57,35 +57,48 @@ let userInfo = [];
 
 function handleLoadGame(e){
   e.preventDefault();
-  let storedUser = localStorage.getItem('user');
+  let storedUser = localStorage.getItem('currentUser');
+  let parsedChapterIndex = JSON.parse(localStorage.getItem('savedChapterIndex'));
+  currentChapterIndex = parseInt(parsedChapterIndex);
+  let savedCreature = localStorage.getItem('savedCreature');
+  parsedCreature = JSON.parse(savedCreature);
+  console.log(parsedCreature);
+  myCreature.creatureScore = parsedCreature.creatureScore;
+  myCreature.traitOne = parsedCreature.traitOne
+  myCreature.traitTwo = parsedCreature.traitTwo;
+  myCreature.traitThree = parsedCreature.traitThree;
+  myCreature.traitFour = parsedCreature.traitFour;
+  myCreature.traitFive = parsedCreature.traitFive;
+  myCreature.traitSix = parsedCreature.traitSix;
   if(storedUser){
     let parsedUser = JSON.parse(storedUser);
     userInfo.push(parsedUser.name);
     userInfo.push(parsedUser.location);
     userInfo.push(parsedUser.color);
     currentUser = new User(parsedUser.name, parsedUser.location, parsedUser.color);
-    // location.href = "./html/chapters.html" // need to add the location they left off from //
-    // if (chapterCounter === 1){
-    //   load chapter one
-    // } else if (chapterCounter === 2){
-    // load chapter two
-    // } else if (chapterCounter === 3){
-    // load chapter three
-    // } else if (chapterCounter === 4){
-    // load chapter one
-    // } else {
-    //   load chapter 5
   } else {
     alert('Sorry, there are currently no saved users.');
   }
+  headElem.style.backgroundImage = `linear-gradient(${userInfo[2]}, white)`;
+  footElem.style.backgroundImage = `linear-gradient(white, ${userInfo[2]})`;
+  startGameForm.style.display = 'none';
+  renderChapters();
+  startButtonElem.removeEventListener('click', handleStartButton);
+  chapterArray[currentChapterIndex].getNextPara();
+  nextButtonElem.style.display = 'block';
+  formTwoElem.style.display = 'none';
+  chapterArray[currentChapterIndex].pullChapterData();
+  myCreature.renderCreature();
 }
 
 
 function addUser(){
   currentUser = new User(userInfo[0], userInfo[1], userInfo[2]);
   let preppedUser = JSON.stringify(currentUser);
-  localStorage.setItem('user', preppedUser);
+  localStorage.setItem('currentUser', preppedUser);
 }
+
+
 
 //------------------------Constructor/Objects----------------------------//
 const User = function(name, location, color){
