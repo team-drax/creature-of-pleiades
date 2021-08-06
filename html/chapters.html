@@ -12,106 +12,98 @@
   </head>
 
   <body>
-    <header>
+    <header id="headElem">
       <h1 id="gameTitle">Creature of Pleiades</h1>
       <img id="headerImg" src="../img/creatureparts/0-BABY.png">
     </header>
 
-    <main>
+    <main id="gamebackground">
       <div id="leftside">
         <section id="title">
-          <h2>CHAPTER ONE</h2>
-          <h3>THE LAB</h3>
+          <h2 id="chapterNumber">PROLOGUE</h2>
         </section>
-        <nav id="interface">
-          <div class="button" id="gohome">HOME</div>
+        <nav class="interface">
+          <div class="button" id="gohome"> <a href="../index.html">HOME</a></div>          <div class="button" id="startgame">START</div>
+        </nav>
+        <nav class="interface">
+          <div class="button" id="loadgame">LOAD</div>
           <div class="button" id="resetgame">RESET</div>
         </nav>
         <div id="creature"> 
+          <img src="../img/creatureparts/0-BABY.png">
         </div>
       </div>
+      <div id="startGameDiv"></div>
       <div id='rightside'>
         <article id="story">
-          <h2 id="chapterTitle">TEST CHAPTER</h2>
-          <p id="paragraph">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
-          <button id="next">NEXT</button>     
-          <form id="testform">
-            <h2 class="formlabel">What will you do?</h2>
+          <h3 id="chapterTitle">Let's begin!</h3>
+          <button id="next">> > > > ></button>     
+          <p id="paragraph">Are you ready for your journey?</p>
+          <form id="firstchoice">
+            <h2 class="formlabel">WHAT WILL YOU DO?</h2>
             <div class="choices">
-              <input type='radio' name='test' id='testopt1'>
-              <label for='testopt1'>Test 1</label>
-              <input type='radio' name='test' id='testopt2'>
-              <label for='testopt1'>Test 2</label>
-              <input type='radio' name='test' id='testopt3'>
-              <label for='testopt1'>Test 3</label>
-            </div>
-            <div class='button'>Test Submit</div>
-          </form>
-          <!-- <form id="firstchoice">
-            <h2 class="formlabel">Creature Evolution 5</h2>
-            <div class="choices">
-              <input type="radio" name="first" id="scare" value=2>
-              <label for="meat">SCARE THE CREATURE</label>
-              <input type="radio" name="first" id="leave" value=1>
-              <label for="meat">LEAVE THE CREATURE</label>
               <input type="radio" name="first" id="bring" value=0>
-              <label for="meat">BRING HOME</label>
+              <label for="bring">APPROACH IT</label>
+              <input type="radio" name="first" id="scare" value=2>
+              <label for="scare">SCARE IT</label>
+              <input type="radio" name="first" id="leave" value=1>
+              <label for="leave">LEAVE IT</label>
             </div>
-            <div class='button'>TestSubmit</div>
+            <button class='button'>GO HOME</button>
           </form>
           <form id="secondchoice">
-            <h2 class="formlabel">Creature Evolution 5</h2>
+            <h2 class="formlabel">WHAT DO YOU FEED IT?</h2>
             <div class="choices">
               <input type="radio" name="second" id="meat" value=2>
-              <label for="meat">MEAT</label>
+              <label for="meat">HOTDOGS</label>
               <input type="radio" name="second" id="veggies" value=1>
-              <label for="meat">VEGGIES</label>
+              <label for="veggies">VEGGIE STIR FRY</label>
               <input type="radio" name="second" id="garbage" value=0>
-              <label for="meat">GARBAGE</label>
+              <label for="garbage">GARBAGE</label>
             </div>
-            <div class='button'>TestSubmit</div>
+            <button class='button'>FEED!</button>
           </form>
           <form id="thirdchoice">
-            <h2 class="formlabel">Creature Evolution 5</h2>
+            <h2 class="formlabel">WHAT DO YOU DO?</h2>
             <div class="choices">
-              <input type="radio" name="third" id="lie" value=2>
-              <label for="meat">LIE</label>
-              <input type="radio" name="third" id="ignore" value=1>
-              <label for="meat">IGNORE TEXT</label>
               <input type="radio" name="third" id="truth" value=0>
-              <label for="meat">TELL TRUTH</label>
+              <label for="truth">TELL HER</label>
+              <input type="radio" name="third" id="ignore" value=1>
+              <label for="ignore">IGNORE HER TEXT</label>
+              <input type="radio" name="third" id="lie" value=2>
+              <label for="lie">LIE TO HER</label>
             </div>
-            <div class='button'>TestSubmit</div>
+            <button class='button'>SEND TEXT</button>
           </form>
           <form id="fourthchoice">
-            <h2 class="formlabel">Creature Evolution 5</h2>
+            <h2 class="formlabel">WHAT'S YOUR PLAN?</h2>
             <div class="choices">
               <input type="radio" name="fourth" id="open" value=2>
-              <label for="meat">OPEN THE DOOR</label>
-              <input type="radio" name="fourth" id="backdoor" value=1>
-              <label for="meat">GO OUT BACKDOOR</label>
+              <label for="open">ANSWER THE DOOR</label>
               <input type="radio" name="fourth" id="hide" value=0>
-              <label for="meat">HIDE UPSTAIRS</label>
+              <label for="hide">JUMP FROM WINDOW</label>
+              <input type="radio" name="fourth" id="backdoor" value=1>
+              <label for="backdoor">SNEAK OUT BACK</label>
             </div>
-            <div class='button'>TestSubmit</div>
+            <button class='button'>COMMIT</button>
           </form>
           <form id="fifthchoice">
-            <h2 class="formlabel">Creature Evolution 5</h2>
+            <h2 class="formlabel">WHERE DO YOU GO?</h2>
             <div class="choices">
-              <input type="radio" name="fifth" id="spaceship" value=2>
-              <label for="meat">TOWARDS SPACESHIP</label>
               <input type="radio" name="fifth" id="lab" value=1>
-              <label for="meat">TO THE LAB</label>
+              <label for="lab">TO THE LAB</label>
+              <input type="radio" name="fifth" id="spaceship" value=2>
+              <label for="spaceship">TOWARDS SPACESHIP</label>
               <input type="radio" name="fifth" id="instincts" value=0>
-              <label for="meat">FOLLOW GUT</label>
+              <label for="instincts">FOLLOW GUT</label>
             </div>
-            <div class='button'>TestSubmit</div>
-          </form> -->
+            <button class='button'>GO!</button>
+          </form>
         </article>
       </div>
     </main>
 
-    <footer>
+    <footer id="footElem">
       <aside>
         <p id="pAside">Justin Hamerly</p>
         <p id="pAsideLink"><a href="https://github.com/JustinHamerly" target="_blank">GitHub</a></p>
@@ -132,6 +124,7 @@
         <p id="pAsideLink"><a href="https://github.com/cburk2019" target="_blank">GitHub</a></p>
         <p id="pAsideLink"><a href="https://www.linkedin.com/in/christopherburk/" target="_blank">LinkedIn</a></p>
       </aside>
+      <script src="../js/startgame.js"></script>
       <script src="../js/text.js"></script>
       <script src="../js/creature.js"></script>
     </footer>

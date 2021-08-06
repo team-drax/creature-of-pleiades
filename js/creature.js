@@ -6,6 +6,12 @@ const evoTwo = ['../img/creatureparts/2-GARBAGE.png', '../img/creatureparts/2-VE
 const evoThree = ['../img/creatureparts/3-TRUTH.png', '../img/creatureparts/3-IGNORE.png', '../img/creatureparts/3-LIE.png'];
 const evoFour = ['../img/creatureparts/4-UPSTAIRS.png', '../img/creatureparts/4-BACKDOOR.png', '../img/creatureparts/4-OPEN.png'];
 const evoFive = ['../img/creatureparts/5-INSTINCTS.png', '../img/creatureparts/5-LAB.png', '../img/creatureparts/5-SPACESHIP.png'];
+const evoSix = ['../img/creatureparts/6-FINALBAD.png', '../img/creatureparts/6-FINALGOOD.png'];
+let startGameDiv = document.getElementById('startGameDiv');
+let startGameForm = document.createElement('form');
+let headElem = document.getElementById('headElem');
+let footElem = document.getElementById('footElem');
+let resetButtonElem = document.getElementById('resetgame');
 //Variables for the different evolution images
 const creatureDivElem = document.getElementById('creature');
 //variable for the location of the creature div
@@ -14,14 +20,18 @@ const formTwoElem = document.getElementById('secondchoice');
 const formThreeElem = document.getElementById('thirdchoice');
 const formFourElem = document.getElementById('fourthchoice');
 const formFiveElem = document.getElementById('fifthchoice');
-//variable for the location for the question one form
+//form location variables
+const startButtonElem = document.getElementById('startgame');
+//variable for the start button on the game page
+let formArray = [formOneElem, formTwoElem, formThreeElem, formFourElem, formFiveElem];
+//an array for the references to the form elements for each of the 5 evolution forms.
 let myCreature = new Creature();
 // creates a creature named Randy and sets it to variable myCreature
-console.log(myCreature);
+
 
 
 /* --------------------------------------------------------------------------------CONSTRUCTOR */
-function Creature (){
+function Creature() {
   this.creatureName = null;
   this.traitOne = null;
   this.traitTwo = null;
@@ -36,35 +46,35 @@ function Creature (){
 
 
 /* --------------------------------------------------------------------------------CONSTRUCTORMETHODS */
-Creature.prototype.renderCreature = function(){
+Creature.prototype.renderCreature = function () {
   creatureDivElem.textContent = '';
   //clears out any currently rendered creature
-  if (this.traitOne){
-    const imgElemOne = document.createElement('img'); 
-    imgElemOne.src = this.traitOne; 
-    imgElemOne.id = 'traitone'; 
+  if (this.traitOne) {
+    const imgElemOne = document.createElement('img');
+    imgElemOne.src = this.traitOne;
+    imgElemOne.id = 'traitone';
     creatureDivElem.appendChild(imgElemOne);
-    if(this.traitTwo){
+    if (this.traitTwo) {
       const imgElemTwo = document.createElement('img');
       imgElemTwo.src = this.traitTwo;
       imgElemTwo.id = 'traittwo';
       creatureDivElem.appendChild(imgElemTwo);
-      if(this.traitThree){
+      if (this.traitThree) {
         const imgElemThree = document.createElement('img');
         imgElemThree.src = this.traitThree;
         imgElemThree.id = 'traitthree';
         creatureDivElem.appendChild(imgElemThree);
-        if (this.traitFour){
+        if (this.traitFour) {
           const imgElemFour = document.createElement('img');
           imgElemFour.src = this.traitFour;
           imgElemFour.id = 'traitfour';
           creatureDivElem.appendChild(imgElemFour);
-          if (this.traitFive){
+          if (this.traitFive) {
             const imgElemFive = document.createElement('img');
             imgElemFive.src = this.traitFive;
             imgElemFive.id = 'traitfive';
             creatureDivElem.appendChild(imgElemFive);
-            if (this.traitSix){
+            if (this.traitSix) {
               const imgElemSix = document.createElement('img');
               imgElemSix.src = this.traitSix;
               imgElemSix.id = 'traitsix';
@@ -77,32 +87,37 @@ Creature.prototype.renderCreature = function(){
   }
 }
 //method for rendering the creature on the page.  Checks for trait values on the myCreature instance, and then creates an image based on the image path in the array.  Does this for each layer that has a value on the creature.
-
-Creature.prototype.addFirstTrait = function(choiceIndex){
+Creature.prototype.addFirstTrait = function (choiceIndex) {
   this.traitOne = evoOne[choiceIndex];
 }
-Creature.prototype.addSecondTrait = function(choiceIndex){
+Creature.prototype.addSecondTrait = function (choiceIndex) {
   this.traitTwo = evoTwo[choiceIndex];
 }
-Creature.prototype.addThirdTrait = function(choiceIndex){
+Creature.prototype.addThirdTrait = function (choiceIndex) {
   this.traitThree = evoThree[choiceIndex];
 }
-Creature.prototype.addFourthTrait = function(choiceIndex){
+Creature.prototype.addFourthTrait = function (choiceIndex) {
   this.traitFour = evoFour[choiceIndex];
 }
-Creature.prototype.addFifthTrait = function(choiceIndex){
+Creature.prototype.addFifthTrait = function (choiceIndex) {
   this.traitFive = evoFive[choiceIndex];
 }
 //prototype methods that pull img links from arrays and put them into the creatures traits
-
-Creature.prototype.changeCreatureScore = function(value){
-  if (value === 0){
+Creature.prototype.changeCreatureScore = function (value) {
+  if (value === 0) {
     this.creatureScore++;
-  } else if (value === 2){
+  } else if (value === 2) {
     this.creatureScore--;
   }
 }
 //changes creature score
+Creature.prototype.getFinalScore = function () {
+  let finalScore = this.creatureScore;
+  return finalScore;
+}
+// this gets the final score of myCreature
+
+
 
 
 /* --------------------------------------------------------------------------------GLOBAL FUNCTIONS */
@@ -112,59 +127,182 @@ Creature.prototype.changeCreatureScore = function(value){
 
 
 /* --------------------------------------------------------------------------------HANDLER FUNCTIONS */
-function handleSubmitOne(e){
-  e.preventDefault();
+function handleStartButton(e){
   console.log(e);
-  for (let i=0; i<3; i++){
-    if (e.target[i].checked){
+  //Create div to pop up after Start New Game button is clicked and gives ID for CSS styling the z-index and centering//
+  
+  startGameDiv.id = 'startGameDiv';
+  startGameDiv.display = 'block';
+  //Creates form for user input on name, gender, favorite color//
+  startGameForm.id = "startGameForm";
+  startGameDiv.appendChild(startGameForm);
+  let fieldsetElem = document.createElement('fieldset');
+  fieldsetElem.id = "fieldsetElem";
+  startGameForm.appendChild(fieldsetElem);
+  let legendElem = document.createElement('legend');
+  legendElem.textContent = 'Let\'s Get to Know You!';
+  fieldsetElem.appendChild(legendElem); 
+  for (let i = 0; i < startGameIdArr.length; i++){
+    let labelElem = document.createElement('label');
+    labelElem.classList.add("startGameLabel");
+    labelElem.textContent = startGameTCArr[i];
+    fieldsetElem.appendChild(labelElem);
+    let inputElem = document.createElement('input');
+    inputElem.type = 'text';
+    inputElem.classList.add("startGameInput");
+    inputElem.id = startGameIdArr[i];
+    labelElem.appendChild(inputElem);
+  }
+  //Creates button to submit user responses and renders Chapter One text/story//
+  let startChapterOneButton = document.createElement('button');
+  startChapterOneButton.type = 'submit';
+  startChapterOneButton.textContent = 'Continue';
+  startChapterOneButton.id = 'continueButton';
+  startGameForm.appendChild(startChapterOneButton);
+  startGameDiv.addEventListener('submit', handleStartChapterOne);
+
+
+  // chapterArray[currentChapterIndex].getNextPara();
+  // chapterArray[currentChapterIndex].pullChapterData();
+  // nextButtonElem.style.display = 'block';
+}
+
+function handleStartChapterOne(e) {
+  e.preventDefault();
+  
+    let userData = e.target[1].value;
+    userInfo.push(userData);
+    let user2Data = e.target[2].value;
+    userInfo.push(user2Data);
+    let user3Data = e.target[3].value;
+    userInfo.push(user3Data);
+    
+  console.log(userInfo);
+  addUser();
+  headElem.style.backgroundImage = `linear-gradient(${userInfo[2]}, white)`;
+  footElem.style.backgroundImage = `linear-gradient(white, ${userInfo[2]})`;
+  startGameForm.style.display = 'none';
+
+  renderChapters();
+
+  chapterArray[currentChapterIndex].getNextPara();
+  chapterArray[currentChapterIndex].pullChapterData();
+  nextButtonElem.style.display = 'block';
+  startButtonElem.removeEventListener('click', handleStartButton);
+}
+
+function handleResetButton(e){
+  window.localStorage.clear();
+  location.reload();
+}
+
+function handleSubmitOne(e) {
+  e.preventDefault();
+  for (let i = 0; i < 3; i++) {
+    if (e.target[i].checked) {
       let checkedValue = parseInt(e.target[i].value);
       myCreature.addFirstTrait(checkedValue);
       myCreature.renderCreature();
       myCreature.changeCreatureScore(checkedValue);
+      currentChapterIndex++
+      chapterArray[currentChapterIndex].getNextPara();
+      nextButtonElem.style.display = 'block';
+      formOneElem.style.display = 'none';
+      chapterArray[currentChapterIndex].pullChapterData();
     }
   }
 }
-function handleSubmitTwo(e){
+function handleSubmitTwo(e) {
   e.preventDefault();
-  for (let i=0; i<3; i++){
-    if (e.target[i].checked){
+  for (let i = 0; i < 3; i++) {
+    if (e.target[i].checked) {
       let checkedValue = parseInt(e.target[i].value);
       myCreature.addSecondTrait(checkedValue);
       myCreature.renderCreature();
       myCreature.changeCreatureScore(checkedValue);
+      currentChapterIndex++
+      chapterArray[currentChapterIndex].getNextPara();
+      nextButtonElem.style.display = 'block';
+      formTwoElem.style.display = 'none';
+      chapterArray[currentChapterIndex].pullChapterData();
     }
   }
 }
-function handleSubmitThree(e){
+function handleSubmitThree(e) {
   e.preventDefault();
-  for (let i=0; i<3; i++){
-    if (e.target[i].checked){
+  for (let i = 0; i < 3; i++) {
+    if (e.target[i].checked) {
       let checkedValue = parseInt(e.target[i].value);
       myCreature.addThirdTrait(checkedValue);
       myCreature.renderCreature();
       myCreature.changeCreatureScore(checkedValue);
+      currentChapterIndex++
+      chapterArray[currentChapterIndex].getNextPara();
+      nextButtonElem.style.display = 'block';
+      formThreeElem.style.display = 'none';
+      chapterArray[currentChapterIndex].pullChapterData();
     }
   }
 }
-function handleSubmitFour(e){
+function handleSubmitFour(e) {
   e.preventDefault();
-  for (let i=0; i<3; i++){
-    if (e.target[i].checked){
+  for (let i = 0; i < 3; i++) {
+    if (e.target[i].checked) {
       let checkedValue = parseInt(e.target[i].value);
       myCreature.addFourthTrait(checkedValue);
       myCreature.renderCreature();
       myCreature.changeCreatureScore(checkedValue);
+      currentChapterIndex++
+      chapterArray[currentChapterIndex].getNextPara();
+      nextButtonElem.style.display = 'block';
+      formFourElem.style.display = 'none';
+      chapterArray[currentChapterIndex].pullChapterData();
     }
   }
 }
-function handleSubmitFive(e){
+function handleSubmitFive(e) {
   e.preventDefault();
-  for (let i=0; i<3; i++){
-    if (e.target[i].checked){
+  for (let i = 0; i < 3; i++) {
+    if (e.target[i].checked) {
       let checkedValue = parseInt(e.target[i].value);
       myCreature.addFifthTrait(checkedValue);
       myCreature.renderCreature();
       myCreature.changeCreatureScore(checkedValue);
+      if (myCreature.getFinalScore() === -5) {
+        currentChapterIndex++;
+        chapterArray[currentChapterIndex].getNextPara();
+        nextButtonElem.style.display = 'block';
+        formFiveElem.style.display = 'none';
+        chapterArray[currentChapterIndex].pullChapterData();
+        myCreature.traitSix = evoSix[0];
+        myCreature.renderCreature();
+      } else if (myCreature.getFinalScore() > -5 && myCreature.getFinalScore() < -1) {
+        currentChapterIndex += 2;
+        chapterArray[currentChapterIndex].getNextPara();
+        nextButtonElem.style.display = 'block';
+        formFiveElem.style.display = 'none';
+        chapterArray[currentChapterIndex].pullChapterData();
+      } else if (myCreature.getFinalScore() > -2 && myCreature.getFinalScore() < 2) {
+        currentChapterIndex += 3;
+        chapterArray[currentChapterIndex].getNextPara();
+        nextButtonElem.style.display = 'block';
+        formFiveElem.style.display = 'none';
+        chapterArray[currentChapterIndex].pullChapterData();
+      } else if (myCreature.getFinalScore() > 1 && myCreature.getFinalScore() < 5) {
+        currentChapterIndex += 4;
+        chapterArray[currentChapterIndex].getNextPara();
+        nextButtonElem.style.display = 'block';
+        formFiveElem.style.display = 'none';
+        chapterArray[currentChapterIndex].pullChapterData();
+      } else if (myCreature.getFinalScore() === 5) {
+        currentChapterIndex += 5;
+        chapterArray[currentChapterIndex].getNextPara();
+        nextButtonElem.style.display = 'block';
+        formFiveElem.style.display = 'none';
+        chapterArray[currentChapterIndex].pullChapterData();
+        myCreature.traitSix = evoSix[1];
+        myCreature.renderCreature();
+      }
     }
   }
 }
@@ -174,6 +312,8 @@ function handleSubmitFive(e){
 
 
 /* --------------------------------------------------------------------------------LISTENERS */
+startButtonElem.addEventListener('click', handleStartButton);
+resetButtonElem.addEventListener('click', handleResetButton);
 formOneElem.addEventListener('submit', handleSubmitOne);
 formTwoElem.addEventListener('submit', handleSubmitTwo);
 formThreeElem.addEventListener('submit', handleSubmitThree);
