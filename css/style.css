@@ -129,11 +129,19 @@ main {
   text-decoration: none;
 } */
 
-#playGameButton:hover, #loadGame:hover, #lore:hover, #aboutUs:hover{
+#playGameButton:hover, #aboutUs:hover{
 	text-decoration: none;
 	color: gold;
   -webkit-transform: scale(1.1) rotate(4deg);
   transform: scale(1.1) rotate(4deg);
+}
+
+#lore:hover {
+  text-decoration: none;
+	color: gold;
+  -webkit-transform: scale(1.1) rotate(-4deg);
+  transform: scale(1.1) rotate(-4deg);
+
 }
 
 /* ---------------------------------------------------------------------------------------------------------------------- */
@@ -154,9 +162,10 @@ main {
 }
 #carousel1 {
   width: 800px;
-  /* height: 60%; */
+  border-radius: 30px;
   position: relative;
   z-index: 2;
+  box-shadow: 0px 0px 20px rgb(110, 142, 191);
 }
 #creatureOnCarousel {
   width: 100px;
@@ -169,6 +178,7 @@ main {
   transition: height infinite;
   transform: rotate(10deg);
   /* transform-origin: 0 0; */
+  z-index: 3;
 }
 #creatureOnCarousel:hover {
   width: 300px;
