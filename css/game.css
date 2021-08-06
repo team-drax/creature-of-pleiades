@@ -227,6 +227,15 @@ legend {
   margin-left: 30px;
   margin-bottom: 10px;
 }
+#name {
+  margin-left: 92px;
+}
+#location {
+  margin-left: 53px;
+}
+#color {
+  margin-left:40px;
+}
 #continueButton {
   height: 40px;
   width: 100px;

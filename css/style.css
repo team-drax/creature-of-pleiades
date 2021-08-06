@@ -227,10 +227,19 @@ legend {
   /* background-color: red; */
   /* justify-items: space-between; */
 }
-.startGameInput {
-  margin: 5px 0px;
-  /* margin-left: 20px; */
-  /* justify-content: stretch; */
+/* .startGameInput {
+  margin: 5px 0px 5px 0px;
+  margin-left: 20px;
+  justify-content: stretch;
+} */
+#name {
+  margin-left: 68px;
+}
+#location {
+  margin-left: 53px;
+}
+#color {
+  margin-left:40px;
 }
 
 /* ---------------------------------------------------------------------------------------------------------------------- */
