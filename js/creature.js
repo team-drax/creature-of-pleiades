@@ -11,6 +11,7 @@ let startGameDiv = document.getElementById('startGameDiv');
 let startGameForm = document.createElement('form');
 let headElem = document.getElementById('headElem');
 let footElem = document.getElementById('footElem');
+let resetButtonElem = document.getElementById('resetgame');
 //Variables for the different evolution images
 const creatureDivElem = document.getElementById('creature');
 //variable for the location of the creature div
@@ -190,6 +191,11 @@ function handleStartChapterOne(e) {
   startButtonElem.removeEventListener('click', handleStartButton);
 }
 
+function handleResetButton(e){
+  window.localStorage.clear();
+  location.reload();
+}
+
 function handleSubmitOne(e) {
   e.preventDefault();
   for (let i = 0; i < 3; i++) {
@@ -307,6 +313,7 @@ function handleSubmitFive(e) {
 
 /* --------------------------------------------------------------------------------LISTENERS */
 startButtonElem.addEventListener('click', handleStartButton);
+resetButtonElem.addEventListener('click', handleResetButton);
 formOneElem.addEventListener('submit', handleSubmitOne);
 formTwoElem.addEventListener('submit', handleSubmitTwo);
 formThreeElem.addEventListener('submit', handleSubmitThree);
