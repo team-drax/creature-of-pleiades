@@ -154,6 +154,7 @@ function handleStartButton(e){
   let startChapterOneButton = document.createElement('button');
   startChapterOneButton.type = 'submit';
   startChapterOneButton.textContent = 'Continue';
+  startChapterOneButton.id = 'continueButton';
   startGameForm.appendChild(startChapterOneButton);
   startGameDiv.addEventListener('submit', handleStartChapterOne);
 

@@ -199,15 +199,62 @@ form {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height:150px;
+  height:210px;
   width:100%;
 }
+legend {
+  font-family: 'Kaushan Script', cursive;
 
+}
 .formlabel {
   font-family: 'Kaushan Script', cursive;
   font-size: 20pt;
-  margin:0px;
-  margin-top:15px;
+  margin: 15px 0px 20px 0px;
+}
+#fieldsetElem {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items:flex-end;
+  margin-top: 30px;
+}
+.startGameLabel {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.startGameInput {
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+#continueButton {
+  height: 40px;
+  width: 100px;
+  margin-right: 30px;
+  border-radius: 20px;
+  background-color: #045fa0d6;
+  color: whitesmoke;
+  font-size: 1em;
+  box-shadow: 0px 0px 20px rgb(110, 142, 191);
+  animation: glowing 5s infinite;
+
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+#continueButton:hover {
+  text-decoration: none;
+  color: gold;
+  -webkit-transform: scale(1.2) translateX(40px);
+  transform: scale(1.2) translateX(40px);
+  box-shadow: 0 12px 16px darkblue;
+}
+@keyframes glowing {
+  0% { box-shadow: 0 0 -10px #082b7d; }
+  40% { box-shadow: 0 0 20px #3292d7; }
+  60% { box-shadow: 0 0 20px #FFFFFF; }
+  100% { box-shadow: 0 0 -10px #3292d7; }
 }
 
 .choices{
@@ -300,4 +347,5 @@ a:visited {
 #startGameForm {
   z-index: 12;
   display: block;
+  transform: translateY(150px);
 }
